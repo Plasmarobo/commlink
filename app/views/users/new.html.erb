@@ -1,6 +1,6 @@
 <% @page_title = "Signup" %>
 				<div class= "Sign_Form">
-					<h1>Sign Up</h1>
+					<div class="Title">Sign Up</div>
 					<%= form_for(:user, :url => {:controller => 'users', :action => :create}) do |f| %>
 
 						<p> Username:</br> <%= f.text_field :username%> </p>

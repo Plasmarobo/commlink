@@ -15,9 +15,10 @@ class SessionsController < ApplicationController
 	if authorized_user
 		session[:user_id] = authorized_user.id
 		flash[:notice] = "Welcome back, #{authorized_user.username}"
+		flash[:color] = "valid"
 		redirect_to(:action => 'home')
 	else
-		flash[:notce] = "Invalid Username or Password"
+		flash[:notice] = "Invalid Username or Password"
 		flash[:color] = "invalid"
 		render "login"
 	end
@@ -25,7 +26,10 @@ class SessionsController < ApplicationController
 
   def logout
 	session[:user_id] = nil
+	flash[:notice] = "Successfully Logged out"
+	flash[:color] = "valid"
 	redirect_to :action => 'login'
+	
   end
 
   def home
