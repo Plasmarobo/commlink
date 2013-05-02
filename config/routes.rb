@@ -14,6 +14,8 @@ Commlink::Application.routes.draw do
 
   get "users/new"
 
+  post "users/create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -72,7 +74,7 @@ Commlink::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => "sessions#login"
+  root :to => "sessions#splash"
   match "signup", :to => "users#new"
   match "login", :to => "sessions#login"
   match "logout", :to => "sessions#logout"
@@ -80,4 +82,5 @@ Commlink::Application.routes.draw do
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
   match "login_attempt", :to => "sessions#login_attempt"
+  match "register", :to => "users#new"
 end
