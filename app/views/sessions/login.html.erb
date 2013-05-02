@@ -1,0 +1,11 @@
+<% @page_title = "Login" -%>
+<div class= "Sign_Form">
+	<div class= "Title"></div>
+	<div class= "Login_Container">
+	<%= form_tag(:action => 'login_attempt') do %>
+		<div class= "Login_Element"><div class= "Label">Username or Email:</div> <%= text_field_tag(:username_or_email) %></div>
+		<div class= "Login_Element"><div class= "Label">Password:</div> <%= text_field_tag(:login_password) %></div>
+		<div class= "Login_Element"> <%= submit_tag("Submit") %>
+	<% end %>
+	</div>
+</div>
