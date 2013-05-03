@@ -34,7 +34,7 @@ class PlayerController < ApplicationController
   end
 
   def select
-  	@player = Players.find params[:id]
+  	@player = Player.find_by_id params[:id]
     if @player 
       session[:player_id] = @player.id
       return true
@@ -46,10 +46,34 @@ class PlayerController < ApplicationController
 
   def edit
   	#Display the edit form
+    @player = Player.find_by_id params[:id]
+    @skillset = Skillset.find_by_id @player.skillset_id
+    @programset = Programset.find_by_id (Node.find_by_player_id @player.id).first.programset_id
+    #@programset = Programsets.find @player.programset_id
   end
 
   def edit_attempt
-  	render "edit"
+      flash[:notice] = "Update Successful"
+      flash[:color] = "valid"
+    if !@player.save
+      flash[:notice] = "Could not update User"
+      flash[:color] = "invalid"
+      render "edit"
+      return false
+    end
+    if !@skillset.save
+      flash[:notice] = "Could not update Skills"
+      flash[:color] = "invalid"
+      render "edit"
+      return false
+    end
+    if !@programset.save
+      flash[:notice] = "Could not update Programs"
+      flash[:color] = "invalid"
+      render "edit"
+      return false
+    end
+      redirect_to :action => :list
   end
 
   def delete
@@ -57,6 +81,6 @@ class PlayerController < ApplicationController
   end
 
   def delete_attempt
-    Players.delete Players.find params[:id]
+    Player.delete Player.find_by_id params[:id]
   end
 end

@@ -8,12 +8,36 @@
 </head>
 <body>
 <div class="Fixed">
-<div class="Vghost"></div>
-<div class="Overlord">
-<div class="ContentWrap">
-<%= yield %>
-</div>
-</div>
+	<div class="Vghost"></div>
+	<div class="Overlord">
+		<div class="ContentWrap">
+			<div class="Compact">
+			<% if !session[:user_id] %>
+				
+					<%= form_tag  :action => :login_attempt, :controller => :sessions  do %>
+						<div class= "CompactElement">
+							<div class= "CompactLabel">Username or Email:</div> 
+							<%= text_field_tag :username_or_email, '', :class => "CompactInput"%>
+						</div>
+						<div class= "CompactElement">
+							<div class= "CompactLabel">Password:</div> 
+							<%= password_field_tag :login_password, '',:class => "CompactInput"%>
+						</div>
+						<div class= "CompactElement"> 
+							<div class="CompactLabel"></div>
+							<%= submit_tag :Login, :class => "CompactButton"%>
+						</div>
+					<% end %>
+				
+			<% else %>
+			<div class ="CompactElement"><%= link_to User.find_by_id(session[:user_id]).username, :controller => :sessions, :action => :home%></div>
+			<div class ="CompactElement"><%= button_to "Logout", :controller => :sessions, :action => :logout%></div>
+			<% end %>
+			</div>
+
+			<%= yield %>
+		</div>
+	</div>
 </div>
 </body>
 </html>

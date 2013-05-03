@@ -60,11 +60,11 @@ display:inline-block;
 .ContentWrap{
 background-color:#999999;
 width:55em;
-height:40em;
+height:37em;
 border:solid;
 border-width:2px;
 border-color:#9999AA;
-margin-top:2.5em;
+margin-top:5em;
 margin-left:auto;
 margin-right:auto;
 
@@ -85,6 +85,10 @@ color:#33AA33;
 
 }
 
+.EditCell{
+	
+}
+
 .Title{
 	font-size:18pt;
 	font-style: strong;
@@ -96,4 +100,50 @@ color:#33AA33;
 
 .ListElement{
 	
+}
+
+.Compact
+{
+	height:3.3em;
+	width:20em;
+	position:relative;
+	top:0em;
+	left:35em;
+}
+
+.CompactElement{
+	height:1.1em;
+	width:20em;
+	float:right;
+}
+
+.Short {
+	width:10em;
+}
+.CompactLabel{
+	font-size:7pt;
+	height:1em;
+	width:9em;
+	float:left;
+}
+
+.CompactInput{
+	font-size:10pt;
+	height:1em;
+	width:9em;
+	padding:0;
+	border:solid;
+	border-width:1px;
+	float:left;
+}
+
+.CompactButton{
+	
+	font-size:7pt;
+	height:1.3em;
+	width:13em;
+	padding:0;
+	border:solid;
+	border-width:1px;
+	float:left;
 }

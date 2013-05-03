@@ -1,13 +1,7 @@
 <% @page_title = "Delete Player" -%>
 <div class= "Sign_Form">
-	<div class= "Title"></div>
-	<div class= "Login_Container">
-	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
-
-	<%= form_tag  :action => :login_attempt  do %>
-		<div class= "Login_Element"><div class= "Label">Username or Email:</div> <%= text_field_tag :username_or_email%></div>
-		<div class= "Login_Element"><div class= "Label">Password:</div> <%= password_field_tag :login_password%></div>
-		<div class= "Login_Element"> <%= submit_tag :Login%>
-	<% end %>
-	</div>
+	<div class= "Title">Really delete <%= @player.name %></div>
+	<p> This action cannot be undone! </p>
+	<p> <%= link_to "Yes, I understand I CANNOT undo this", :action => :delete_attempt, :id => @player.id %></p>
+	<p> <%= link_to "No, take me back", :back %> </p>
 </div>
