@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  node_id: 1
+  analyze: 1
+  browse: 1
+  command: 1
+  edit: 1
+  encrypt: 1
+  reality_filter: 1
+  scan: 1
+  armor: 1
+  attack: 1
+  biofeedback_filter: 1
+  black_hammer: 1
+  blackout: 1
+  data_bomb: 1
+  decrypt: 1
+  defuse: 1
+  eccm: 1
+  exploit: 1
+  medic: 1
+  sniffer: 1
+  spoof: 1
+  stealth: 1
+  track: 1
+
+two:
+  node_id: 1
+  analyze: 1
+  browse: 1
+  command: 1
+  edit: 1
+  encrypt: 1
+  reality_filter: 1
+  scan: 1
+  armor: 1
+  attack: 1
+  biofeedback_filter: 1
+  black_hammer: 1
+  blackout: 1
+  data_bomb: 1
+  decrypt: 1
+  defuse: 1
+  eccm: 1
+  exploit: 1
+  medic: 1
+  sniffer: 1
+  spoof: 1
+  stealth: 1
+  track: 1

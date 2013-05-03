@@ -1,4 +1,4 @@
-class CreateGamesessions < ActiveRecord::Migration
+class Creategamesessions < ActiveRecord::Migration
   def change
     create_table :gamesessions do |t|
       t.integer :group_id

@@ -3,10 +3,20 @@ class GroupsController < ApplicationController
   def new
   end
 
+  def create
+
+  end
+
   def list
   end
 
   def edit
+  end
+
+  def add_player
+  end
+
+  def remove_player
   end
 
   def delete

@@ -1,2 +1,9 @@
-<h1>Player#list</h1>
-<p>Find me in app/views/player/list.html.erb</p>
+<% @page_title = "Your Players" -%>
+<div class= "Sign_Form">
+	<div class= "Title">Select or Edit a Player</div>
+	<div class= "ListContainer">
+	<% Players.where("user_id == ?", session[:user_id]).each do |p| %>
+	<div class= "ListElement"> <%= link_to p.name, :action => :select, :id => p.id %> <%= link_to "Edit", :action => :edit, :id => p.id %> <%= link_to "Delete", :action => :delete, :id => p.id %>  </div>
+	<% end %>
+	</div>
+</div>

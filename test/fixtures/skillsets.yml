@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  npc_id: 1
+  hacking: 1
+  computer: 1
+  electronic_warfare: 1
+  hardware: 1
+  datasearch: 1
+  software: 1
+  cybercombat: 1
+
+two:
+  player_id: 1
+  npc_id: 1
+  hacking: 1
+  computer: 1
+  electronic_warfare: 1
+  hardware: 1
+  datasearch: 1
+  software: 1
+  cybercombat: 1
