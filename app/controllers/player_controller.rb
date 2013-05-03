@@ -13,7 +13,9 @@ class PlayerController < ApplicationController
   	@programset = Programset.new
   	@commlink = Node.new
 
-  	#PARSE XML HERE
+  	doc = Nokogiri::XML(uploaded_xml)
+
+    #Parse Doc using Nokogiri! http://nokogiri.org
 
   	@commlink.player_id = @player.id
   	@commlink.programset_id = @programset.id
