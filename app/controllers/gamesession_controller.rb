@@ -30,8 +30,8 @@ class gamesessionController < ApplicationController
   end
 
   def select
-    @gs = gamesessions.find_by_name params[:session_name]
-    Groups.find_by_gs_id @gs.id do |g| 
+    @gs = Gamesession.find_by_name params[:session_name]
+    Group.find_by_gs_id @gs.id do |g| 
       if g.player_id == params[:player_id] 
         session[:gamesession_id] = @gs.id
         return true

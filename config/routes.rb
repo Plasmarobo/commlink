@@ -1,7 +1,17 @@
 Commlink::Application.routes.draw do
-
   resources :node_templates
 
+  get "skillset/new"
+
+  get "skillset/edit"
+
+  get "skillset/delete"
+
+  get "programset/new"
+
+  get "programset/edit"
+
+  get "programset/delete"
 
   get "node/new"
 
@@ -15,9 +25,6 @@ Commlink::Application.routes.draw do
 
   get "groups/list"
 
-  get "player/new"
-
-  get "player/list"
 
   get "gamesession/new"
 
@@ -75,13 +82,15 @@ Commlink::Application.routes.draw do
 
   get "player/edit"
 
-  get "player/view"
+  post "player/select"
+
+  get "player/list"
 
   get "player/delete"
 
-  get "player/games"
-
   get "sessions/login"
+
+  post "session/login_attempt"
 
   get "sessions/home"
 
@@ -94,6 +103,10 @@ Commlink::Application.routes.draw do
   get "login/profile"
 
   get "users/new"
+
+  get "users/create"
+
+  post "users/new"
 
   post "users/create"
 
@@ -155,7 +168,7 @@ Commlink::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => "sessions#splash"
+  root :to => "sessions#home"
   match "signup", :to => "users#new"
   match "login", :to => "sessions#login"
   match "logout", :to => "sessions#logout"
@@ -164,4 +177,5 @@ Commlink::Application.routes.draw do
   match "setting", :to => "sessions#setting"
   match "login_attempt", :to => "sessions#login_attempt"
   match "register", :to => "users#new"
+  match "player", :to => "player#list"
 end
