@@ -1,4 +1,6 @@
 class GamesessionController < ApplicationController
+  before_filter :authenticate_user
+
   def new
   end
 
@@ -16,4 +18,9 @@ class GamesessionController < ApplicationController
 
   def delete
   end
+
+  def advance
+  end
+
+  
 end
