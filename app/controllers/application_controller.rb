@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 	def authenticate_user
 		unless session[:user_id]
-			redurect_to(:controller => 'sessions', :action => 'login')
+			redirect_to(:controller => 'sessions', :action => 'login')
 			return false
 		else
 			#set user object to current suers
@@ -12,6 +12,15 @@ class ApplicationController < ActionController::Base
 			return true
 		end
 	end
+
+	def authenticate_player
+		unless session[:player_id]
+			redirect_to(:controller => 'player', :action => 'view')
+			return false
+		else
+			@current_player = Player.find session[:player_id]
+			return true
+		end
 
 	def save_login_state
 		if session[:user_id]

@@ -1,5 +1,59 @@
 Commlink::Application.routes.draw do
 
+  get "actions/hack_otf"
+
+  get "actions/hack_tyt"
+
+  get "actions/reveal"
+
+  get "actions/observe"
+
+  get "actions/encrypt"
+
+  get "actions/crash_node"
+
+  get "actions/spoof_cmd"
+
+  get "actions/spoof_track"
+
+  get "actions/repair_icon"
+
+  get "actions/crash_prog"
+
+  get "actions/disarm_db"
+
+  get "actions/decrypt"
+
+  get "actions/scan"
+
+  get "actions/hide"
+
+  get "groups/create"
+
+  get "groups/edit"
+
+  get "groups/delete"
+
+  get "gamesession/create"
+
+  get "gamesession/edit"
+
+  get "gamesession/delete"
+
+  get "gamesession/manage"
+
+  get "gamesession/advance"
+
+  get "player/upload"
+
+  get "player/edit"
+
+  get "player/view"
+
+  get "player/delete"
+
+  get "player/games"
+
   get "sessions/login"
 
   get "sessions/home"

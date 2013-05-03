@@ -24,11 +24,14 @@ margin:0;
 padding:0;
 }
 .Fixed{
+
 width:100%;
 height:100%;
 position:absolute;
 overflow:visible;
 text-align:center;
+min-width:70em;
+min-height:50em;
 }
 
 .Vghost{
@@ -72,4 +75,13 @@ color:#AA3333;
 }
 .valid{
 color:#33AA33;
+}
+
+.Form_Element{
+
+}
+
+.Title{
+	font-size:18pt;
+	font-style: strong;
 }
