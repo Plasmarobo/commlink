@@ -21,9 +21,8 @@ class PlayerController < ApplicationController
   	@skillset.save 
   	@programset.player_id = @player.id
   	@programset.save
-  	@player.node_id = @commlink.id
-	#@player.skillset_id = @skillset.id
-	#@player.programset_id = @programset.id
+	  @player.skillset_id = @skillset.id
+	  @player.programset_id = @programset.id
   	@player.save
   	redirect_to :action => :list
   end

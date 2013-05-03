@@ -11,36 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502232641) do
+ActiveRecord::Schema.define(:version => 20130503142728) do
 
   create_table "gamesessions", :force => true do |t|
-    t.string   "name"
-    t.integer  "gm_id"
     t.integer  "group_id"
+    t.integer  "gm_id"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.integer  "player_id"
     t.integer  "gamesession_id"
-    t.integer  "group_id"
+    t.integer  "player_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
   create_table "nodes", :force => true do |t|
-    t.string   "name"
-    t.string   "desc"
-    t.integer  "gamesession_id"
     t.integer  "player_id"
+    t.integer  "gm_id"
+    t.string   "name"
+    t.text     "desc"
     t.integer  "programset_id"
     t.integer  "system"
     t.integer  "firewall"
     t.integer  "response"
+    t.integer  "pilot"
     t.integer  "signal"
-    t.integer  "stealth"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "npcs", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.text     "secret"
+    t.integer  "node_id"
+    t.integer  "gamesession_id"
     t.integer  "gm_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
@@ -49,15 +57,14 @@ ActiveRecord::Schema.define(:version => 20130502232641) do
   create_table "players", :force => true do |t|
     t.string   "name"
     t.integer  "skillset_id"
-    t.integer  "group_id"
+    t.integer  "programset_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "programsets", :force => true do |t|
     t.integer  "node_id"
-    t.integer  "player_id"
     t.integer  "analyze"
     t.integer  "browse"
     t.integer  "command"
@@ -85,14 +92,15 @@ ActiveRecord::Schema.define(:version => 20130502232641) do
   end
 
   create_table "skillsets", :force => true do |t|
-    t.integer  "software"
-    t.integer  "hardware"
-    t.integer  "data_search"
-    t.integer  "computer"
-    t.integer  "hacking"
-    t.integer  "electronic_warfare"
-    t.integer  "cybercombat"
     t.integer  "player_id"
+    t.integer  "npc_id"
+    t.integer  "hacking"
+    t.integer  "computer"
+    t.integer  "electronic_warfare"
+    t.integer  "hardware"
+    t.integer  "datasearch"
+    t.integer  "software"
+    t.integer  "cybercombat"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
