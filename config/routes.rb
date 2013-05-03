@@ -1,5 +1,29 @@
 Commlink::Application.routes.draw do
 
+  get "node/new"
+
+  get "node/list"
+
+  get "node/edit"
+
+  get "node/delete"
+
+  get "groups/new"
+
+  get "groups/list"
+
+  get "player/new"
+
+  get "player/list"
+
+  get "gamesession/new"
+
+  get "gamesession/list"
+
+  get "gamesession/gm"
+
+  get "gamesession/player"
+
   get "actions/hack_otf"
 
   get "actions/hack_tyt"
