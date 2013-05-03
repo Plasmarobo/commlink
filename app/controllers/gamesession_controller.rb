@@ -1,11 +1,11 @@
-class GamesessionController < ApplicationController
+class gamesessionController < ApplicationController
   before_filter :authenticate_user
   before_filter :authenticate_player, :only => [ :player ]
   before_filter :authenticate_gm, :only => [ :gm, :manage, :advance, :delete ]
   before_filter :authenticate_gamesession, :only => [ :gm, :player, :manage, :delete, :advance ]
 
   def authenticate_gm
-    @gamesession = Gamesessions.find session[:gamesession_id]
+    @gamesession = gamesessions.find session[:gamesession_id]
     if @gamesession.gm_id == session[:user_id]
       return true
     else
@@ -30,7 +30,7 @@ class GamesessionController < ApplicationController
   end
 
   def select
-    @gs = Gamesessions.find_by_name params[:session_name]
+    @gs = gamesessions.find_by_name params[:session_name]
     Groups.find_by_gs_id @gs.id do |g| 
       if g.player_id == params[:player_id] 
         session[:gamesession_id] = @gs.id

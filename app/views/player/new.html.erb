@@ -1,2 +1,14 @@
-<h1>Player#new</h1>
-<p>Find me in app/views/player/new.html.erb</p>
+
+<% @page_title = "Upload Player" -%>
+<div class= "Sign_Form">
+	<div class= "Title">Upload a .chummer (xml) file</div>
+	<div class= "Form_Container">
+	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
+
+	<%= form_tag  :action => :parsexml do %>
+		<div class= "Login_Element"><div class= "Label">Select a file:</div> <%= file_field_tag :file%></div>
+		
+		<div class= "Login_Element"> <%= submit_tag :Upload%>
+	<% end %>
+	</div>
+</div>

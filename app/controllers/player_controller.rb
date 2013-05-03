@@ -1,6 +1,7 @@
 class PlayerController < ApplicationController
 	before_filter :authenticate_user
 	before_filter :authenticate_player, :only => [ :edit, :delete, :edit_attempt ]
+
   def new
   	#Just render the new form
   end
@@ -23,6 +24,7 @@ class PlayerController < ApplicationController
   	@programset.save
 	  @player.skillset_id = @skillset.id
 	  @player.programset_id = @programset.id
+    @player.user_id = session[:user_id]
   	@player.save
   	redirect_to :action => :list
   end
@@ -32,7 +34,14 @@ class PlayerController < ApplicationController
   end
 
   def select
-  	session[:player_id] = Players.find_by_name params[:name].id
+  	@player = Players.find params[:id]
+    if @player 
+      session[:player_id] = @player.id
+      return true
+    else
+      render "list"
+      return false
+    end
   end
 
   def edit
@@ -44,5 +53,10 @@ class PlayerController < ApplicationController
   end
 
   def delete
+    #Display delete page
+  end
+
+  def delete_attempt
+    Players.delete Players.find params[:id]
   end
 end
