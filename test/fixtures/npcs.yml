@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  desc: MyText
+  secret: MyText
+  node_id: 1
+  gamesession_id: 1
+  gm_id: 1
+
+two:
+  name: MyString
+  desc: MyText
+  secret: MyText
+  node_id: 1
+  gamesession_id: 1
+  gm_id: 1
