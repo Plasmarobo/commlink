@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
 			@current_player = Player.find session[:player_id]
 			return true
 		end
+	end
 
 	def save_login_state
 		if session[:user_id]
