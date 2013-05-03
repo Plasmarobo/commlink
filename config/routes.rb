@@ -1,4 +1,22 @@
 Commlink::Application.routes.draw do
+  get "rules/new"
+
+  get "rules/upload"
+
+  get "rules/download"
+
+  get "rules/move"
+
+  get "chummer/new"
+
+  get "chummer/edit"
+
+  get "chummer/finish"
+
+  get "chummer/update"
+
+  get "chummer/view"
+
   resources :node_templates
 
   get "skillset/new"
@@ -78,7 +96,11 @@ Commlink::Application.routes.draw do
 
   get "gamesession/advance"
 
-  get "player/upload"
+  get "player/new"
+
+  post "player/new"
+
+  post "player/parsexml"
 
   get "player/edit"
 
@@ -178,4 +200,5 @@ Commlink::Application.routes.draw do
   match "login_attempt", :to => "sessions#login_attempt"
   match "register", :to => "users#new"
   match "player", :to => "player#list"
+  match "upload", :to => "player#new"
 end

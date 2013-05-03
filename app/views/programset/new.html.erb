@@ -1,2 +1,13 @@
-<h1>Programset#new</h1>
-<p>Find me in app/views/programset/new.html.erb</p>
+<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
+<%= form_tag  :action => :create do %>
+<div class="FormContainer">
+<%= @programset.column_names.each do |c| %>
+<% if c.sub[-3,2] != "id" do %>
+<div class="EditCell">
+<%= c + ":"%>
+<%= text_field_tag c%>
+</div>
+<% end %>
+<%= submit_tag :Submit %>
+<% end %>
+</div>

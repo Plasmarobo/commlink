@@ -8,5 +8,10 @@ class ProgramsetController < ApplicationController
   end
 
   def delete
+  	#Just render the delete dialog
+  end
+
+  def delete_attempt
+  	Programset.delete Programset.find_by_id params[:id]
   end
 end

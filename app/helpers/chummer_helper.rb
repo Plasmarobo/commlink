@@ -1,0 +1,2 @@
+module ChummerHelper
+end

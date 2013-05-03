@@ -74,6 +74,49 @@ ActiveRecord::Schema.define(:version => 20130503151443) do
     t.integer  "programset_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "programsets", :force => true do |t|
+    t.integer  "node_id"
+    t.integer  "analyze"
+    t.integer  "browse"
+    t.integer  "command"
+    t.integer  "edit"
+    t.integer  "encrypt"
+    t.integer  "reality_filter"
+    t.integer  "scan"
+    t.integer  "armor"
+    t.integer  "attack"
+    t.integer  "biofeedback_filter"
+    t.integer  "black_hammer"
+    t.integer  "blackout"
+    t.integer  "data_bomb"
+    t.integer  "decrypt"
+    t.integer  "defuse"
+    t.integer  "eccm"
+    t.integer  "exploit"
+    t.integer  "medic"
+    t.integer  "sniffer"
+    t.integer  "spoof"
+    t.integer  "stealth"
+    t.integer  "track"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "skillsets", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "npc_id"
+    t.integer  "hacking"
+    t.integer  "computer"
+    t.integer  "electronic_warfare"
+    t.integer  "hardware"
+    t.integer  "datasearch"
+    t.integer  "software"
+    t.integer  "cybercombat"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|
