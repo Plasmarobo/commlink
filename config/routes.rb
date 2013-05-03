@@ -1,5 +1,8 @@
 Commlink::Application.routes.draw do
 
+  resources :node_templates
+
+
   get "node/new"
 
   get "node/list"

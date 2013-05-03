@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  name: MyString
+  desc: MyText
+  programset_id: 1
+  system: 1
+  firewall: 1
+  response: 1
+  pilot: 1
+  signal: 1
+  signal: 1
+
+two:
+  user_id: 1
+  name: MyString
+  desc: MyText
+  programset_id: 1
+  system: 1
+  firewall: 1
+  response: 1
+  pilot: 1
+  signal: 1
+  signal: 1

@@ -1,3 +1,5 @@
 class Player < ActiveRecord::Base
-  attr_accessible :name, :programset_id, :skillset_id
+	belongs_to :user
+	has_many :groups
+  	attr_accessible :name, :programset_id, :skillset_id
 end

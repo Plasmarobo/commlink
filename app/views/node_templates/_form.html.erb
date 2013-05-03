@@ -1,0 +1,57 @@
+<%= form_for(@node_template) do |f| %>
+  <% if @node_template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@node_template.errors.count, "error") %> prohibited this node_template from being saved:</h2>
+
+      <ul>
+      <% @node_template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :programset_id %><br />
+    <%= f.number_field :programset_id %>
+  </div>
+  <div class="field">
+    <%= f.label :system %><br />
+    <%= f.number_field :system %>
+  </div>
+  <div class="field">
+    <%= f.label :firewall %><br />
+    <%= f.number_field :firewall %>
+  </div>
+  <div class="field">
+    <%= f.label :response %><br />
+    <%= f.number_field :response %>
+  </div>
+  <div class="field">
+    <%= f.label :pilot %><br />
+    <%= f.number_field :pilot %>
+  </div>
+  <div class="field">
+    <%= f.label :signal %><br />
+    <%= f.number_field :signal %>
+  </div>
+  <div class="field">
+    <%= f.label :signal %><br />
+    <%= f.number_field :signal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
