@@ -1,5 +1,5 @@
-class Creategamesessions < ActiveRecord::Migration
-  def change
+class CreateGamesessions < ActiveRecord::Migration
+  def up
     create_table :gamesessions do |t|
       t.integer :group_id
       t.integer :gm_id
@@ -7,5 +7,9 @@ class Creategamesessions < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+  	drop_table :gamesessions
   end
 end

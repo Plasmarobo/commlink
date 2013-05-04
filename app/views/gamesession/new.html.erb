@@ -1,2 +1,12 @@
-<h1>gamesession#new</h1>
-<p>Find me in app/views/gamesession/new.html.erb</p>
+<% @page_title = "Start a Game" -%>
+<div class= "Sign_Form">
+	<div class= "Title">New Game</div>
+	<div class= "Form_Container">
+	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
+	<%= form_tag  :action => :create do %>
+		<div class= "Login_Element"><div class= "Label">Name:</div> <%= file_field_tag :file%></div>
+		
+		<div class= "Login_Element"> <%= submit_tag :Upload%>
+	<% end %>
+	</div>
+</div>

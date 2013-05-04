@@ -51,7 +51,7 @@ class PlayerController < ApplicationController
     @player = Player.find_by_id params[:id]
     @skillset = Skillset.find_by_id @player.skillset_id
     @programset = Programset.find_by_id (Node.find_by_player_id @player.id).first.programset_id
-    #@programset = Programsets.find @player.programset_id
+    #@programset = Programsets.find_by_id @player.programset_id
   end
 
   def edit_attempt

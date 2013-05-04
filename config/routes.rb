@@ -1,4 +1,13 @@
 Commlink::Application.routes.draw do
+
+  post "friender/create"
+
+  get "friender/add"
+
+  get "friender/list"
+
+  get "friender/remove"
+
   get "rules/new"
 
   get "rules/upload"

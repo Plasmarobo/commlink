@@ -3,7 +3,7 @@
 <% if c.sub[-3,2] != "id" do %>
 <div class="EditCell">
 <%= c + ":"%>
-<%= text_field_tag c, @programset.c%>
+<%= text_field_tag ("prog_" + c), @programset.c%>
 </div>
 <% end %>
 <% end %>

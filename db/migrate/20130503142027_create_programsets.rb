@@ -1,5 +1,5 @@
 class CreateProgramsets < ActiveRecord::Migration
-  def change
+  def up
     create_table :programsets do |t|
       t.integer :node_id
       t.integer :analyze
@@ -27,5 +27,9 @@ class CreateProgramsets < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :programsets
   end
 end

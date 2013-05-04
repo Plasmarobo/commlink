@@ -1,5 +1,5 @@
 class CreatePlayers < ActiveRecord::Migration
-  def change
+  def up
     create_table :players do |t|
       t.string :name
       t.integer :skillset_id
@@ -7,5 +7,9 @@ class CreatePlayers < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+  	drop_table :players
   end
 end

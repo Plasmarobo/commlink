@@ -21,17 +21,16 @@
 							</div>
 						</div>
 
-						render "programset/edit"
-						
-						#Add player handlers
+						<%= render :template => "programset/edit"%>
 
+						<p> GM Node?: <%= check_box_tag :gm, 'gm', false%></p>
 
 						<%= f.submit :Signup %>
 					<% end %>
 
 					<% if @user.errors.any? %>
 						<ul class="Signup_Errors">
-							<% for message_error in @user.errors.full_messages %>
+							<% for message_error in @node.errors.full_messages %>
 							<li>* <%= message_error %></li>
 							<% end %>
 						</ul>

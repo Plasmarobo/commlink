@@ -1,5 +1,5 @@
 class CreateNpcs < ActiveRecord::Migration
-  def change
+  def up
     create_table :npcs do |t|
       t.string :name
       t.text :desc
@@ -10,5 +10,9 @@ class CreateNpcs < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :npcs
   end
 end

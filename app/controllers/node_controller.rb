@@ -6,18 +6,59 @@ class NodeController < ApplicationController
   end
 
   def create
+    @node = Node.new
+    @programset = Programset.new
+    
+    @node.desc = params[:desc]
+    @node.firewall = params[:firewall]
+    @node.gm_id  = params[:gm] ? session[:user_id] : nil
+    @node.name = params[:name]
+    @node.pilot = params[:pilot]
+    @node.player_id = params[:gm] ? nil : session[:user_id]
+    @node.program_set = @programset.id
+    @node.response = params[:response]
+    @node.signal = params[:signal]
+    @node.system = params[:system]
+ 
+    @programset.create params
 
-  end
+    if @programset.save
+      if @node.save
+        flash[:notice] = "Successfully created node"
+        flash[:color] = "valid"
+        redirect_to :controller => :gamesession, :action => :manage
+        return true
+      else
+        @programset.destroy
+        flash[:notice] = "Could not create node"
+        flash[:color] = "invalid"
+        redirect_to :back
+        return false
+      end
+    else
+      flash[:notice] = "Could not create programset"
+      flash[:color] = "valid"
+      redirect_to :back
+      return false
+    end
 
-  def instance
   end
 
   def list
+    #Just render a nice chunk
   end
 
   def edit
+    #Just render a nice chunk
+  end
+
+  def attempt_edit
   end
 
   def delete
+    #Oh noes!
+  end
+
+  def attempt_delete
   end
 end

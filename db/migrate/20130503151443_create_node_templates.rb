@@ -1,5 +1,5 @@
 class CreateNodeTemplates < ActiveRecord::Migration
-  def change
+  def up
     create_table :node_templates do |t|
       t.integer :user_id
       t.string :name
@@ -14,5 +14,9 @@ class CreateNodeTemplates < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :node_templates
   end
 end

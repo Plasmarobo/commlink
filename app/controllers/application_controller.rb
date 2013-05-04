@@ -8,8 +8,14 @@ class ApplicationController < ActionController::Base
 			return false
 		else
 			#set user object to current suers
-			@current_user = User.find session[:user_id]
-			return true
+			@current_user = User.find_by_id session[:user_id]
+			if @current_user
+				return true
+			else
+				session[:user_id] = nil
+				redirect_to(:controller => 'sessions', :action => 'login')
+				return false
+			end
 		end
 	end
 
@@ -18,7 +24,7 @@ class ApplicationController < ActionController::Base
 			redirect_to(:controller => 'player', :action => 'list')
 			return false
 		else
-			@current_player = Player.find session[:player_id]
+			@current_player = Player.find_by_id session[:player_id]
 			if @current_player.user_id == session[:user_id]
 				return true
 			else

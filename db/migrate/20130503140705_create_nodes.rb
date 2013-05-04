@@ -1,5 +1,5 @@
 class CreateNodes < ActiveRecord::Migration
-  def change
+  def up
     create_table :nodes do |t|
       t.integer :player_id
       t.integer :gm_id
@@ -14,5 +14,8 @@ class CreateNodes < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+  def down
+    drop_table :nodes
   end
 end

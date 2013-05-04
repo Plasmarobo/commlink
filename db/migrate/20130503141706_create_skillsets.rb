@@ -1,5 +1,5 @@
 class CreateSkillsets < ActiveRecord::Migration
-  def change
+  def up
     create_table :skillsets do |t|
       t.integer :player_id
       t.integer :npc_id
@@ -13,5 +13,9 @@ class CreateSkillsets < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :skillsets
   end
 end
