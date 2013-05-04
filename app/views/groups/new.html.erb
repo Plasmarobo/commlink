@@ -1,2 +1,13 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<div class="Title">Players : Pals</div>
+		<div class="SwitchList">
+			<div class="LeftList">
+				<%= render :template => 'friender/list' %>
+			</div>
+			<div class="CenterList">
+				<%= button_tag :ltr %>
+				<%= button_tag :rtl %>
+			</div>
+			<div class="RightList" id="player_list">
+			</div>
+		</div>
+		<% end %>

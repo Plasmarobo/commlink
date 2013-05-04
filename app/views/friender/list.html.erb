@@ -1,6 +1,6 @@
 
 <div class= "Sign_Form">
-	<div class= "Title">Friends</div>
+	<div class= "Title">Pals</div>
 	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 	<div class= "ListContainer">
 	<% User.find_by_id(session[:user_id]).pals.each do |p| %>

@@ -1,6 +1,6 @@
 
 				<div class= "FriendForm">
-					<div class="Title">Enter Username to Add Friend</div>
+					<div class="Title">Enter Username to add Pal</div>
 					<%= form_tag  :controller => :friender, :action => :create do %>
 						<p> Username:</br> <%= text_field_tag :username%> 
 						<%= submit_tag :Add %><div class="<%= flash[:color] %>"><%= flash[:notice] %></div></p>

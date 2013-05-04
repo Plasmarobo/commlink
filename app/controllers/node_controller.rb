@@ -1,5 +1,6 @@
 class NodeController < ApplicationController
 	before_filter :authenticate_user
+
   def new
     @node = Node.new
     @programset = Programset.new
@@ -8,13 +9,18 @@ class NodeController < ApplicationController
   def create
     @node = Node.new
     @programset = Programset.new
-    
+    if !session[:player_id] and !params[:gm]
+      flash[:notice] = "Node must be either player or gm!"
+      flash[:color] = "invalid"
+      redirect_to :back
+      return false
+    end
     @node.desc = params[:desc]
     @node.firewall = params[:firewall]
     @node.gm_id  = params[:gm] ? session[:user_id] : nil
     @node.name = params[:name]
     @node.pilot = params[:pilot]
-    @node.player_id = params[:gm] ? nil : session[:user_id]
+    @node.player_id = params[:gm] ? nil : session[:player_id]
     @node.program_set = @programset.id
     @node.response = params[:response]
     @node.signal = params[:signal]
