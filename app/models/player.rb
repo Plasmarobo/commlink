@@ -4,6 +4,7 @@ class Player < ActiveRecord::Base
 	has_many :gamesessions, through: :groups
 	has_one :skillset, dependent: :destroy
   	attr_accessible :id, :user_id, :name, :programset_id, :skillset_id, :condition, :stun
+    
 	def parsexml
   	@skillset = Skillset.new
   	@programset = Programset.new

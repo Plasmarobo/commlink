@@ -97,6 +97,8 @@ Commlink::Application.routes.draw do
 
   get "player/edit"
 
+  get "player/select"
+
   post "player/select"
 
   get "player/list"

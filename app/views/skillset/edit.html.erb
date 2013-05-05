@@ -1,5 +1,5 @@
 <div class="FormContainer">
-	<%= @skillset.attribute_names.each do |c, d| %>
+	<% @skillset.item_names.each do |c, d| %>
 		<div class="EditCell">
 			<div class="EditCellLabel"><%= d%></div>
 			<%= text_field_tag ("skill_" + c), @skillset.send(c), :class => "EditCellInput"%>

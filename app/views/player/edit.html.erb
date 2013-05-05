@@ -4,10 +4,15 @@
 					<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 					<%= form_for(:player, :url => {:controller => 'player', :action => :edit_attempt}) do |f| %>
 
-						<p> Name:</br> <%= f.text_field :username %> </p>
+						<p> Name:</br> <%= f.text_field :name %> </p>
+						<p> Condition:</br> <%= f.text_field :condition %> </p>
+						<p> Stun:</br> <%= f.text_field :stun %> </p>
 						<p> Skills: </p>
-						<% render "skillset/edit" %>
-						<% render "programset/edit" %>
+						<% @skillset = @player.skillset %>
+						<% render :template => "skillset/edit" %>
+						<p> Nodes </p>
+						<% @player = f %>
+						<% render :template => "node/list" %>
 
 						<%= f.submit :Save %>
 					<% end %>
@@ -26,11 +31,5 @@
 							<% end %>
 						</ul>
 					<% end %>
-					<% if @programset.errors.any? %>
-						<ul class="FormErrors">
-							<% for message_error in @programset.errors.full_messages %>
-							<li>* <%= message_error %></li>
-							<% end %>
-						</ul>
-					<% end %>
+					
 </div>

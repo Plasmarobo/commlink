@@ -12,8 +12,8 @@ class Skillset < ActiveRecord::Base
       self.computer = params[:skill_software]
   end
 
-  def attribute_name
-  	names = {
+  def item_names
+  	return {
   		computer: "Computer", 
   		cybercombat: "Cybercombat", 
   		datasearch: "Datasearch", 
@@ -22,6 +22,5 @@ class Skillset < ActiveRecord::Base
   		hardware: "Hardware",  
   		software: "Software"
   	}
-  	return names
   end
 end

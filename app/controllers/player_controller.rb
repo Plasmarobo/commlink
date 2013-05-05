@@ -21,9 +21,14 @@ class PlayerController < ApplicationController
   	@player = Player.find_by_id params[:id]
     if @player 
       session[:player_id] = @player.id
+      flash[:notice] = "Player Selected"
+      flash[:color] = "valid"
+      redirect_to :back
       return true
     else
-      render "list"
+      flash[:notice] = "Could not select player"
+      flash[:color] = "invalid"
+      redirect_to :controller => :player, :action => :list
       return false
     end
   end
@@ -32,7 +37,6 @@ class PlayerController < ApplicationController
   	#Display the edit form
     @player = Player.find_by_id params[:id]
     @skillset = Skillset.find_by_id @player.skillset_id
-    @programset = Programset.find_by_id (Node.find_by_player_id @player.id).first.programset_id
     #@programset = Programsets.find_by_id @player.programset_id
   end
 
