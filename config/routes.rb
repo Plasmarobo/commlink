@@ -8,6 +8,10 @@ Commlink::Application.routes.draw do
 
   get "friender/remove"
 
+  get "friender/delete_attempt"
+
+  post "friender/delete_attempt"
+
   get "rules/new"
 
   get "rules/upload"
@@ -55,39 +59,13 @@ Commlink::Application.routes.draw do
 
   get "gamesession/new"
 
+  post "gamesession/new"
+
   get "gamesession/list"
 
   get "gamesession/gm"
 
   get "gamesession/player"
-
-  get "actions/hack_otf"
-
-  get "actions/hack_tyt"
-
-  get "actions/reveal"
-
-  get "actions/observe"
-
-  get "actions/encrypt"
-
-  get "actions/crash_node"
-
-  get "actions/spoof_cmd"
-
-  get "actions/spoof_track"
-
-  get "actions/repair_icon"
-
-  get "actions/crash_prog"
-
-  get "actions/disarm_db"
-
-  get "actions/decrypt"
-
-  get "actions/scan"
-
-  get "actions/hide"
 
   get "groups/create"
 

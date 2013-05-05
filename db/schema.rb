@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503234052) do
+ActiveRecord::Schema.define(:version => 20130504234146) do
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "group_id"
@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(:version => 20130503234052) do
     t.integer  "response"
     t.integer  "pilot"
     t.integer  "signal"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "gamesession_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "gm_id"
   end
 
   create_table "npcs", :force => true do |t|

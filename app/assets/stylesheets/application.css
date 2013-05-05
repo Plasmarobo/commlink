@@ -147,3 +147,27 @@ color:#33AA33;
 	border-width:1px;
 	float:left;
 }
+
+.SwitchList {
+	width:55em;
+	height:auto;
+	min-height:5em;
+}
+
+.LeftList {
+	width:25em;
+	height:100%;
+	float:left;
+}
+
+.CenterList {
+	width:5em;
+	height:100%;
+	float:left;
+}
+
+.RightList {
+	width:25em;
+	height:100%;
+	float:left;
+}

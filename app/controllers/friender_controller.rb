@@ -8,11 +8,18 @@ class FrienderController < ApplicationController
   def create
   	@pal = Pal.new
   	@pal.user_id = session[:user_id]
+
   	@user = User.find_by_username(params[:username])
+    if @user.id == @pal.user_id
+      flash[:notice] = "Nice try, you can't friend yourself"
+      flash[:color] = "invalid"
+      redirect_to :back
+      return false
+    end
 	
   	if(@user)
   		@pal.pal_id = @user.id;
-  		if Pal.where(:user_id => @pal.user_id, :pal_id => @pal.pal_id)
+  		if !Pal.where(:user_id => @pal.user_id, :pal_id => @pal.pal_id).any?
   			if @pal.save
   				flash[:notice] = "Added Pal!"
   				flash[:color] = "valid"
@@ -33,21 +40,31 @@ class FrienderController < ApplicationController
  	else
   		flash[:notice] = "Could find user"
   		flash[:color] = "invalid"
-		redirect_to :back
+		  redirect_to :back
   		return false
   	end
   end
 
   def list
   	#Draw a nifty little list of pals!
-  	@user = session[:user_id]
+    @user = User.find_by_id session[:user_id]
   end
 
   def remove
   	#Oh noes!
   end
 
-  def attempt_delete
-  	Pal.delete Pal.find_by_pal_id params[:id]
+  def delete_attempt
+  	if Pal.find_by_id( params[:id] ).destroy
+      redirect_to :controller => :sessions, :action => :profile
+      return true
+    else
+      flash[:notice] = "Cannot remove pal"
+      flash[:color] = "invalid"
+      redirect_to :controller => :sessions, :action => :profile
+      return false
+    end
+
+
   end
 end

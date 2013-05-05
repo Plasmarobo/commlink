@@ -4,7 +4,7 @@
 	<div class= "Form_Container">
 	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 	<%= form_tag  :action => :create do %>
-		<div class= "Login_Element"><div class= "Label">Name:</div> <%= file_field_tag :file%></div>
+		<div class= "Login_Element"><div class= "Label">Name:</div> <%= text_field_tag :name%></div>
 		<div class="Title">Nodes</div>
 		<div class="SwitchList">
 			<div class="LeftList">
@@ -13,7 +13,7 @@
 			<div class="CenterList">
 				<%= button_tag :ltr %>
 				<%= button_tag :rtl %>
-				<%= button_to :New, :controller => :node, :action => :new %>
+				<%= button_to :new, :controller => :node, :action => :new %>
 			</div>
 			<div class="RightList" id="nodelist">
 			</div>

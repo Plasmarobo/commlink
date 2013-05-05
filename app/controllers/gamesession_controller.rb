@@ -19,6 +19,7 @@ class GamesessionController < ApplicationController
   end
 
   def new
+      @player = nil
       #Just render the new form
   end
 

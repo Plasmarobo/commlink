@@ -22,3 +22,5 @@ $("#device_rating").on "change", ->
   unless $("#custom").checked()
     $("#nodev").children("input").each (index) ->
       index.value $("#device_rating").value()
+
+select_node = (this, nodeid) ->

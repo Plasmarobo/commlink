@@ -8,5 +8,4 @@
 	<div class= "ListElement"> <%=  username + " " %><%= link_to image_tag("delete16.png", :border => 0), :controller => :friender, :action => :remove, :id => p.id, :username => username %>  </div>
 	<% end %>
 	</div>
-	<%= render :template => 'friender/add' %>
 </div>

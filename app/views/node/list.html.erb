@@ -1,14 +1,16 @@
 <% @page_title = "Your Nodes" -%>
 <div class="Title">Player Nodes</div>
 <div class="List">
-<% Node.join(:player).which(:user_id => session[:user_id]).each do |n| %>
-<div class="ListElement"> <%= n.name %></div>
+<% if @player != nil %>
+	<% @player.node.each do |n| %>
+		<div class="ListElement" onclick="select_node(this, n.id);"> <%= n.name %></div>
+	<% end %>
 <% end %>
 </div>
 
 <div class="Title">GM Nodes</div>
 <div class="List">
-<% Node.which(:gm_id => session[:user_id]).each do |n| %>
-<div class="ListElement"> <%= n.name %></div>
+<% Node.where(:gm_id => session[:user_id]).each do |n| %>
+<div class="ListElement" onclick="select_node(this, n.id);"> <%= n.name %></div>
 <% end %>
 </div>

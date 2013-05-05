@@ -51,7 +51,10 @@ class NodeController < ApplicationController
   end
 
   def list
-    #Just render a nice chunk
+    @player = Player.find_by_id session[:player_id]
+    if !@player
+      redirect_to :controller => :player, :action => :select
+    end
   end
 
   def edit
