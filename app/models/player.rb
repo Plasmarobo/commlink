@@ -3,11 +3,8 @@ class Player < ActiveRecord::Base
 	has_many :groups
 	has_many :gamesessions, through: :groups
 	has_one :skillset, dependent: :destroy
-  	attr_accessible :id, :user_id, :name, :programset_id, :skillset_id
-
+  	attr_accessible :id, :user_id, :name, :programset_id, :skillset_id, :condition, :stun
 	def parsexml
-  	uploaded_xml = File.new(params[:file])
-  	@player = Player.new
   	@skillset = Skillset.new
   	@programset = Programset.new
   	@commlink = Node.new
