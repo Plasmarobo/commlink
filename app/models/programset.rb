@@ -27,4 +27,5 @@ class Programset < ActiveRecord::Base
     self.stealth = params[:prog_stealth]
     self.track = params[:prog_track]
   end
+
 end
