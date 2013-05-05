@@ -1,38 +1,35 @@
 <% @page_title = "Create Node" %>
-				<div class= "Form">
-					<div class="Title">New Node</div>
-					<%= form_for(:node, :url => {:controller => 'node', :action => :create}) do |f| %>
- :gm_id,  :player_id
-						<p> Name:</br> <%= f.text_field :name%> </p>
+<div class= "Form">
+	<div class="Title">New Node</div>
+	<%= form_for(:node, :url => {:controller => 'node', :action => :create}) do |f| %>
+		<p> Name:</br> <%= f.text_field :name%> </p>
+		<p> Description/Subtitle:</br> <%= f.text_area :desc%> </p>
+    <p> Customize?: <%= check_box_tag 'custom', 'custom', true%> </p>
+		<div class="Split">
+			<div class="Half" id="nodev">
+				<p> Firewall:</br> <%= f.text_field :firewall%></p>
+				<p> System:</br> <%= f.text_field :system%> </p>
+				<p> Response:</br> <%= f.text_field :response%> </p>
+				<p> Signal:</br> <%= f.text_field :signal%> </p>
+				<p> Pilot:</br> <%= f.text_field :pilot%> </p>
+			</div>
+			<div class="Half" id="dev">
+				<p> Device Rating:</br><%= text_field_tag 'device_rating',0, :disabled => true %></p>
+			</div>
+		</div>
 
-						<p> Description/Subtitle:</br> <%= f.text_area :desc%> </p>
+		<%= render :template => "programset/edit"%>
 
-						<p> Customize?: <%= check_box_tag 'custom', 'custom', true%> </p>
-						<div class="Split">
-							<div class="Half" id="nodev">
-								<p> Firewall:</br> <%= f.text_field :firewall%></p>
-								<p> System:</br> <%= f.text_field :system%> </p>
-								<p> Response:</br> <%= f.text_field :response%> </p>
-								<p> Signal:</br> <%= f.text_field :signal%> </p>
-								<p> Pilot:</br> <%= f.text_field :pilot%> </p>
-							</div>
-							<div class="Half" id="dev">
-							<p> Device Rating:</br><%= text_field_tag 'device_rating', :disabled => true%></p>
-							</div>
-						</div>
+		<p> GM Node?: <%= check_box_tag :gm, 'gm', false%></p>
 
-						<%= render :template => "programset/edit"%>
+		<%= f.submit :Signup %>
+	<% end %>
 
-						<p> GM Node?: <%= check_box_tag :gm, 'gm', false%></p>
-
-						<%= f.submit :Signup %>
-					<% end %>
-
-					<% if @user.errors.any? %>
-						<ul class="Signup_Errors">
-							<% for message_error in @node.errors.full_messages %>
-							<li>* <%= message_error %></li>
-							<% end %>
-						</ul>
-					<% end %>
+	<% if @node.errors.any? %>
+		<ul class="Signup_Errors">
+			<% for message_error in @node.errors.full_messages %>
+				<li>* <%= message_error %></li>
+			<% end %>
+		</ul>
+	<% end %>
 </div>

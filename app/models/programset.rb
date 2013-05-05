@@ -27,4 +27,59 @@ class Programset < ActiveRecord::Base
     self.stealth = params[:prog_stealth]
     self.track = params[:prog_track]
   end
+
+  
+ def zero
+    self.analyze = 0
+    self.armor = 0
+    self.attack = 0
+    self.biofeedback_filter = 0
+    self.black_hammer = 0
+    self.blackout = 0
+    self.command = 0
+    self.data_bomb = 0
+    self.decrypt = 0
+    self.defuse = 0
+    self.eccm = 0
+    self.edit = 0
+    self.encrypt = 0
+    self.exploit = 0
+    self.medic = 0
+    self.reality_filter = 0
+    self.scan = 0
+    self.sniffer = 0
+    self.spoof = 0
+    self.stealth = 0
+    self.track = 0
+ end
+
+
+ def atribute_names
+        names = { 
+        analyze: "Analyze" , 
+        armor: "Armor", 
+        attack: "Attack", 
+        biofeedback_filter: "Biofeedback", 
+        black_hammer: "Black Hammer", 
+        blackout: "Blackout", 
+        browse: "Browse", 
+        command: "Command", 
+        data_bomb: "Data bomb", 
+        decrypt: "Decrypt", 
+        defuse: "Defuse", 
+        eccm: "Eccm", 
+        edit: "Edit", 
+        encrypt: "Encrypt", 
+        exploit: "Exploit", 
+        medic: "Medic", 
+        reality_filter: "Reality Filter", 
+        scan: "Scan", 
+        sniffer: "Sniffer", 
+        spoof: "Spoof", 
+        stealth: "Stealth", 
+        track: "Track"
+    }
+    return names
+    end
+    
 end

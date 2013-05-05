@@ -45,7 +45,8 @@ min-height:50em;
 .Overlord{
 background-color:#777777;
 width:60em;
-height:45em;
+min-height:45em;
+height:auto;
 margin-top: 5em;
 margin: 0 auto;
 overflow:visible;
@@ -60,14 +61,16 @@ display:inline-block;
 .ContentWrap{
 background-color:#999999;
 width:55em;
-height:37em;
+min-height:37em;
+height:auto;
 border:solid;
 border-width:2px;
 border-color:#9999AA;
 margin-top:5em;
 margin-left:auto;
 margin-right:auto;
-
+margin-bottom:5em;
+overflow-y:auto;
 }
 
 .invalid{
@@ -86,7 +89,26 @@ color:#33AA33;
 }
 
 .EditCell{
-	
+	height:3em;
+	width:3em;
+	font-size:18pt;
+	float:left;
+}
+
+.EditCellLabel{
+	height:25%;
+	width:100%;
+	text-align:center;
+	font-size:14pt;
+	float:left;
+}
+
+.EditCellInput{
+	height:75%;
+	width:100%;
+	text-align:center;
+	font-size:18pt;
+	float:left;
 }
 
 .Title{

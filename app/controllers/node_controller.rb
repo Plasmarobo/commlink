@@ -4,6 +4,8 @@ class NodeController < ApplicationController
   def new
     @node = Node.new
     @programset = Programset.new
+    @programset.zero
+    @program_names = @programset.attribute_names
   end
 
   def create

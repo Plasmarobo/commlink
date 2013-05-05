@@ -3,6 +3,15 @@ class SkillsetController < ApplicationController
   	@skillset = Skillset.new
   end
 
+  def create
+    @skillset.create_from_parameters(params)
+    if @skillset.save
+      return true
+    else
+      return false
+    end
+  end
+
   def edit
   	#Just render the form
   end
