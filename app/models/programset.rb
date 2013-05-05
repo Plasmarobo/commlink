@@ -10,6 +10,7 @@ class Programset < ActiveRecord::Base
     self.biofeedback_filter = params[:prog_biofeedback_filter]
     self.black_hammer = params[:prog_black_hammer]
     self.blackout = params[:prog_blackout]
+    self.browse = params[:prog_browse]
     self.command = params[:prog_command]
     self.data_bomb = params[:prog_data_bomb]
     self.decrypt = params[:prog_decrypt]
@@ -36,6 +37,7 @@ class Programset < ActiveRecord::Base
     self.biofeedback_filter = 0
     self.black_hammer = 0
     self.blackout = 0
+    self.browse = 0
     self.command = 0
     self.data_bomb = 0
     self.decrypt = 0
@@ -54,8 +56,8 @@ class Programset < ActiveRecord::Base
  end
 
 
- def atribute_names
-        names = { 
+ def item_names
+        return { 
         analyze: "Analyze" , 
         armor: "Armor", 
         attack: "Attack", 
@@ -79,7 +81,6 @@ class Programset < ActiveRecord::Base
         stealth: "Stealth", 
         track: "Track"
     }
-    return names
-    end
+end
     
 end

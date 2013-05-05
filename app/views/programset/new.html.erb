@@ -1,7 +1,7 @@
 <p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 <%= form_tag  :action => :create do %>
 	<div class="FormContainer">
-		<%= @program_names.each do |c, d| %>
+		<%= @programset.item_names.each do |c, d| %>
 			<div class="EditCell">
 				<div class="EditCellLabel"><%= d %></div>
 				<%= text_field_tag ("prog_" + c), 0, :class => "EditCellInput"%>

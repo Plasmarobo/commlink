@@ -23,7 +23,7 @@ class NodeController < ApplicationController
     @node.name = params[:name]
     @node.pilot = params[:pilot]
     @node.player_id = params[:gm] ? nil : session[:player_id]
-    @node.program_set = @programset.id
+    @node.programset_id = @programset.id
     @node.response = params[:response]
     @node.signal = params[:signal]
     @node.system = params[:system]
