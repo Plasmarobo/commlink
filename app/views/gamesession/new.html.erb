@@ -3,16 +3,16 @@
 	<div class= "Title">New Game</div>
 	<div class= "Form_Container">
 	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
-	<%= form_tag  :action => :create do %>
+	<%= form_tag  :id => 'new_game', :action => :create do %>
 		<div class= "Login_Element"><div class= "Label">Name:</div> <%= text_field_tag :name%></div>
 		<div class="Title">Nodes</div>
 		<div class="SwitchList">
-			<div class="LeftList">
+			<div class="LeftList" id="srclist">
 				<%= render :template => 'node/list' %>
 			</div>
 			<div class="CenterList">
-				<%= button_tag :ltr %>
-				<%= button_tag :rtl %>
+				<%= button_to :ltr,"javascript:move_sel('srclist','ListSel','nodelist');" %>
+				<%= button_to :rtl,"javascript:remove_sel('nodelist','ListSel',);" %>
 				<%= button_to :new, :controller => :node, :action => :new %>
 			</div>
 			<div class="RightList" id="nodelist">
@@ -20,8 +20,8 @@
 		</div>
 		
 		<%= render :template => 'groups/new' %>
-		
-		<div class= "Login_Element"> <%= submit_tag :Start%>
+		<%= hidden_field_tag :nodelist_data%>
+		<div class= "Login_Element"> <%= button_to :Start, "javascript:parse_sel_submit('nodelist', 'new_game', 'nodelist_data');"%>
 	<% end %>
 	</div>
 </div>

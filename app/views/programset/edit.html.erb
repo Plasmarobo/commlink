@@ -1,10 +1,7 @@
 <div class="FormContainer">
-<%= @programset.column_names.each do |c| %>
-<% if c.sub[-3,2] != "id" do %>
-<div class="EditCell">
-<%= c + ":"%>
-<%= text_field_tag ("prog_" + c), @programset.c%>
-</div>
-<% end %>
-<% end %>
+	<%= @programset.attribute_names.each do |c, d| %>
+		<div class="EditCell"><div class="EditCellLabel"> <%= d %> </div>
+			<%= text_field_tag ("prog_" + c), @programset.send(c), :class => "EditCellInput" %>
+		</div>
+	<% end %>
 </div>

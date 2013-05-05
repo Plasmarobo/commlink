@@ -46,6 +46,12 @@ Commlink::Application.routes.draw do
 
   get "node/new"
 
+  post "node/new"
+
+  get "node/create"
+
+  post "node/create"
+
   get "node/list"
 
   get "node/edit"

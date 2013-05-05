@@ -3,7 +3,17 @@ class ProgramsetController < ApplicationController
   	@programset = Programset.new
   end
 
+  def create
+    @programset.create_from_parameters(params)
+    if @programset.save
+      return true
+    else
+      return false
+    end
+  end
+
   def edit
+    @programset = Programset.find_by_id params[:id]
   	#Just render the form
   end
 

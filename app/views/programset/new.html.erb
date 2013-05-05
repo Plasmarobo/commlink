@@ -1,13 +1,13 @@
 <p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 <%= form_tag  :action => :create do %>
-<div class="FormContainer">
-<%= @programset.column_names.each do |c| %>
-<% if c.sub[-3,2] != "id" do %>
-<div class="EditCell">
-<%= c + ":"%>
-<%= text_field_tag c%>
-</div>
+	<div class="FormContainer">
+		<%= @program_names.each do |c, d| %>
+			<div class="EditCell">
+				<div class="EditCellLabel"><%= d %></div>
+				<%= text_field_tag ("prog_" + c), 0, :class => "EditCellInput"%>
+			</div>
+		<% end %>
+	</div>
+	<%= submit_tag :Submit %>
 <% end %>
-<%= submit_tag :Submit %>
-<% end %>
-</div>
+
