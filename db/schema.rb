@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504234146) do
+ActiveRecord::Schema.define(:version => 20130505174324) do
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "group_id"
@@ -88,44 +88,44 @@ ActiveRecord::Schema.define(:version => 20130504234146) do
 
   create_table "programsets", :force => true do |t|
     t.integer  "node_id"
-    t.integer  "analyze"
-    t.integer  "browse"
-    t.integer  "command"
-    t.integer  "edit"
-    t.integer  "encrypt"
-    t.integer  "reality_filter"
-    t.integer  "scan"
-    t.integer  "armor"
-    t.integer  "attack"
-    t.integer  "biofeedback_filter"
-    t.integer  "black_hammer"
-    t.integer  "blackout"
-    t.integer  "data_bomb"
-    t.integer  "decrypt"
-    t.integer  "defuse"
-    t.integer  "eccm"
-    t.integer  "exploit"
-    t.integer  "medic"
-    t.integer  "sniffer"
-    t.integer  "spoof"
-    t.integer  "stealth"
-    t.integer  "track"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "analyze",            :default => 1
+    t.integer  "browse",             :default => 1
+    t.integer  "command",            :default => 0
+    t.integer  "edit",               :default => 1
+    t.integer  "encrypt",            :default => 0
+    t.integer  "reality_filter",     :default => 0
+    t.integer  "scan",               :default => 1
+    t.integer  "armor",              :default => 0
+    t.integer  "attack",             :default => 0
+    t.integer  "biofeedback_filter", :default => 0
+    t.integer  "black_hammer",       :default => 0
+    t.integer  "blackout",           :default => 0
+    t.integer  "data_bomb",          :default => 0
+    t.integer  "decrypt",            :default => 0
+    t.integer  "defuse",             :default => 0
+    t.integer  "eccm",               :default => 0
+    t.integer  "exploit",            :default => 0
+    t.integer  "medic",              :default => 0
+    t.integer  "sniffer",            :default => 0
+    t.integer  "spoof",              :default => 0
+    t.integer  "stealth",            :default => 0
+    t.integer  "track",              :default => 0
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "skillsets", :force => true do |t|
     t.integer  "player_id"
     t.integer  "npc_id"
-    t.integer  "hacking"
-    t.integer  "computer"
-    t.integer  "electronic_warfare"
-    t.integer  "hardware"
-    t.integer  "datasearch"
-    t.integer  "software"
-    t.integer  "cybercombat"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "hacking",            :default => 0
+    t.integer  "computer",           :default => 1
+    t.integer  "electronic_warfare", :default => 0
+    t.integer  "hardware",           :default => 0
+    t.integer  "datasearch",         :default => 1
+    t.integer  "software",           :default => 1
+    t.integer  "cybercombat",        :default => 0
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "users", :force => true do |t|

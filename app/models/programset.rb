@@ -28,7 +28,6 @@ class Programset < ActiveRecord::Base
     self.stealth = params[:prog_stealth]
     self.track = params[:prog_track]
   end
-
   
  def zero
     self.analyze = 0
@@ -81,6 +80,6 @@ class Programset < ActiveRecord::Base
         stealth: "Stealth", 
         track: "Track"
     }
-end
-    
+  end
+
 end
