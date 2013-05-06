@@ -1,24 +1,24 @@
 
-select_node = (target, nodeid, classtarget) ->
+window.select_node = (target, nodeid, classtarget) ->
   $("." + classtarget).each (index) ->
     $(index).removeClass classtarget
-    $(index).value nodeid
-
+  $("#nodeid").val nodeid
   $(target).addClass classtarget
-move_sel = (source, classtarget, dest) ->
+
+window.move_sel = (source, classtarget, dest) ->
   $("#" + source).children("." + classtarget).each (index) ->
     $("#" + dest).add index
     $(index).remove()
 
-remove_sel = (source, classtarget) ->
+window.remove_sel = (source, classtarget) ->
   $("#" + source).children("." + classtarget).each (index) ->
     $(index).remove()
 
-parse_sel_submit = (source, form, data_placeholder) ->
+window.parse_sel_submit = (source, form, data_placeholder) ->
   $("#" + source).children().each (index) ->
-    $("#" + data_placeholder).value $("#" + data_placeholder).value()(+", " + index.value())
-
+    $("#" + data_placeholder).value $("#" + data_placeholder).val()(+", " + index.val())
   $("#" + form).submit()
+
 $("#custom").on "change", ->
   if $("#custom").checked()
     $("#nodev").children("input").each (index) ->
@@ -38,5 +38,5 @@ $("#custom").on "change", ->
 $("#device_rating").on "change", ->
   unless $("#custom").checked()
     $("#nodev").children("input").each (index) ->
-      index.value $("#device_rating").value()
+      index.value $("#device_rating").val()
 

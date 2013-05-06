@@ -127,11 +127,23 @@ color:#33AA33;
 }
 
 .ListContainer{
-
+	width:100%;
 }
 
 .ListElement{
-	
+	width:100%;
+	border-bottom-style: solid;
+	border-bottom:1px;
+	border-bottom-color:#000000;
+}
+
+.InSelector{
+
+}
+
+.ListSel {
+	background-color:#0000EE;
+	color:#FFFFFF;
 }
 
 .Compact

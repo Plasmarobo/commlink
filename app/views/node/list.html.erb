@@ -3,7 +3,7 @@
 <div class="List">
 	<% if @player != nil %>
 		<% @player.nodes.each do |n| %>
-			<div class="ListElement InSelector" onclick="select_node(this, n.id, 'ListSel');"> <%= n.name %></div>
+			<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListElement')", :class => "ListElement InSelector") %>
 		<% end %>
 	<% end %>
 </div>
@@ -11,6 +11,7 @@
 <div class="Title">GM Nodes</div>
 <div class="List">
 	<% @user.nodes.each do |n| %>
-		<div class="ListElement InSelector" onclick="select_node(this, n.id, 'ListSel');"> <%= n.name %></div>
+		<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListElement')", :class => "ListElement InSelector") %>
 	<% end %>
+	<%= hidden_field_tag(:nodeid, :value => nil)%>
 </div>
