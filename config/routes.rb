@@ -105,6 +105,10 @@ Commlink::Application.routes.draw do
 
   get "player/delete"
 
+  get "player/edit_attempt"
+
+  post "player/edit_attempt"
+
   get "sessions/login"
 
   post "session/login_attempt"

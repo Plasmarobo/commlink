@@ -1,9 +1,10 @@
 class Player < ActiveRecord::Base
 	belongs_to :user
+  has_many :nodes, dependent: :destroy
 	has_many :groups
 	has_many :gamesessions, through: :groups
-	has_one :skillset, dependent: :destroy
-  	attr_accessible :id, :user_id, :name, :programset_id, :skillset_id, :condition, :stun
+	has_one :skillset, dependent: :destroy, foreign_key: :id
+  attr_accessible :id, :user_id, :name, :programset_id, :condition, :stun
     
 	def parsexml
   	@skillset = Skillset.new
@@ -17,7 +18,6 @@ class Player < ActiveRecord::Base
   	@commlink.player_id = @player.id
   	@commlink.programset_id = @programset.id
   	@commlink.save
-  	@skillset.player_id = @player.id
   	@skillset.save 
   	@programset.player_id = @player.id
   	@programset.save

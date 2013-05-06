@@ -9,10 +9,10 @@
 						<p> Stun:</br> <%= f.text_field :stun %> </p>
 						<p> Skills: </p>
 						<% @skillset = @player.skillset %>
-						<% render :template => "skillset/edit" %>
+						<%= render :template => "skillset/edit" %>
 						<p> Nodes </p>
-						<% @player = f %>
-						<% render :template => "node/list" %>
+						
+						<%= render :template => "node/list" %>
 
 						<%= f.submit :Save %>
 					<% end %>

@@ -35,8 +35,9 @@ class PlayerController < ApplicationController
 
   def edit
   	#Display the edit form
+    @user = User.find_by_id session[:user_id]
     @player = Player.find_by_id params[:id]
-    @skillset = Skillset.find_by_id @player.skillset_id
+    @skillset = @player.skillset
     #@programset = Programsets.find_by_id @player.programset_id
   end
 

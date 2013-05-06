@@ -2,7 +2,7 @@
 	<% @skillset.item_names.each do |c, d| %>
 		<div class="EditCell">
 			<div class="EditCellLabel"><%= d%></div>
-			<%= text_field_tag ("skill_" + c), @skillset.send(c), :class => "EditCellInput"%>
+			<%= text_field_tag ("skill_" + c.to_s), @skillset.send(c), :class => "EditCellInput"%>
 		</div>
 	<% end %>
 </div>
