@@ -23,6 +23,18 @@ height:100%;
 margin:0;
 padding:0;
 }
+
+button{
+	padding:0px;
+	margin:0px;
+	height:auto;
+	width:auto;
+	border:solid;
+	border-color:#000000;
+	border-width:1px;
+	clear:both;
+}
+
 .Fixed{
 
 width:100%;
@@ -221,4 +233,23 @@ color:#33AA33;
 
 .Clear{
 	clear:both;
+}
+
+.DeleteTag{
+
+}
+
+.EditTag{
+
+}
+
+.HiddenTag{
+	display:hidden;
+}
+
+
+.SwitchButton{
+	width:100%;
+	height:1.5em;
+	text-align:center;
 }

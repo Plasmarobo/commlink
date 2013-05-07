@@ -60,9 +60,16 @@ class NodeController < ApplicationController
     end
   end
 
+  def manage
+    @user = User.find_by_id session[:user_id]
+    @player = Player.find_by_id params[:player_id]
+  end
+
   def edit
     #Just render a nice chunk
   end
+
+
 
   def attempt_edit
   end

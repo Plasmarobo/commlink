@@ -59,12 +59,13 @@ Commlink::Application.routes.draw do
 
   get "node/edit"
 
+  get "node/manage"
+
   get "node/delete"
 
   get "groups/new"
 
   get "groups/list"
-
 
   get "gamesession/new"
 
@@ -83,6 +84,8 @@ Commlink::Application.routes.draw do
   get "groups/delete"
 
   get "gamesession/create"
+
+  post "gamesession/create"
 
   get "gamesession/edit"
 

@@ -1,6 +1,6 @@
 class GamesessionController < ApplicationController
   before_filter :authenticate_user
-  before_filter :authenticate_player, :only => [ :player ]
+  #before_filter :authenticate_player, :only => [ :player ]
   before_filter :authenticate_gm, :only => [ :manage, :advance, :delete ]
   before_filter :authenticate_gamesession, :only => [ :gm, :player, :manage, :delete, :advance ]
 
@@ -25,11 +25,19 @@ class GamesessionController < ApplicationController
   end
 
   def create
-
+    @game = Gamesession.new(params[:name], params[:nodelist_data], params[:playerlist_data])
+    if !@game.save
+      redirect :back
+      return false
+    else
+      redirect_to :controller => :gamesession, :action => :manage
+      return true
   end
 
   def list
     #Render the list of valid game sessions
+    @user = User.find_by_id session[:user_id]
+    @players = Player.find_all_by_user_id session[:user_id]
   end
 
   def select
@@ -46,12 +54,21 @@ class GamesessionController < ApplicationController
   end
 
   def gm
+    @user = User.find_by_id session[:user_id]
   end
 
   def select_gm
   end
 
   def player
+    @user = User.find_by_id session[:user_id]
+    @game = Gamesession.find_by_id params[:game_id]
+    @player = Player.find_by_id params[:player_id]
+    if !@player 
+      redirect_to :back
+      return false
+    end
+
   end
 
   def manage
