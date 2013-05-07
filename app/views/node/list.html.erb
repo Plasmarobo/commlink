@@ -1,17 +1,19 @@
 
-<div class="Title">Player Nodes</div>
-<div class="List">
-	<% if @player != nil %>
+
+<% if @player != nil %>
+	<div class="Title">Player Nodes</div>
+		<div class="List">
 		<% @player.nodes.each do |n| %>
-			<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListElement')", :class => "ListElement InSelector") %>
+			<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListSel')", :class => "ListElement InSelector") %>
 		<% end %>
-	<% end %>
-</div>
+	</div>
+<% end %>
+
 
 <div class="Title">GM Nodes</div>
 <div class="List">
 	<% @user.nodes.each do |n| %>
-		<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListElement')", :class => "ListElement InSelector") %>
+		<%= content_tag(:div, "#{n.name}", :onclick => "select_node(this, #{n.id}, 'ListSel')", :class => "ListElement InSelector") %>
 	<% end %>
 	<%= hidden_field_tag(:nodeid, :value => nil)%>
 </div>

@@ -1,27 +1,32 @@
 <% @page_title = "Start a Game" -%>
 <div class= "Sign_Form">
 	<div class= "Title">New Game</div>
+	
 	<div class= "Form_Container">
-	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
-	<%= form_tag  :id => 'new_game', :action => :create do %>
-		<div class= "Login_Element"><div class= "Label">Name:</div> <%= text_field_tag :name%></div>
-		<div class="Title">Nodes</div>
-		<div class="SwitchList">
-			<div class="LeftList" id="srclist">
-				<%= render :template => 'node/list' %>
+		<%= form_tag  :id => 'new_game', :action => :create do %>
+			<div class= "FormElement">
+				<div class= "Label">Name:</div> 
+				<%= text_field_tag :name%>
 			</div>
-			<div class="CenterList">
-				<%= button_to :ltr,"javascript:move_sel('srclist','ListSel','nodelist');" %>
-				<%= button_to :rtl,"javascript:remove_sel('nodelist','ListSel',);" %>
-				<%= button_to :new, :controller => :node, :action => :new %>
-			</div>
-			<div class="RightList" id="nodelist">
-			</div>
-		</div>
-		
-		<%= render :template => 'groups/new' %>
-		<%= hidden_field_tag :nodelist_data%>
-		<div class= "Login_Element"> <%= button_to :Start, "javascript:parse_sel_submit('nodelist', 'new_game', 'nodelist_data');"%>
-	<% end %>
+			<div class="FormElement">
+			<div class="Title">Nodes</div>
+				<div class="SwitchList">
+					<div class="LeftList" id="srclist">
+						<%= render :template => 'node/list' %>
+					</div>
+					<div class="CenterList">
+						<%= button_tag :ltr, :type => :button, :onclick => "move_sel('srclist .ListSel','nodelist');" %>
+						<%= button_tag :rtl, :type => :button, :onclick => "remove_sel('nodelist', '.ListSel');" %>
+						<%= button_tag :new, :controller => :node, :action => :new %>
+					</div>
+					<div class="RightList" id="nodelist">
+					</div>	
+				</div>
+				<div class="Title">Add Pals</div>
+				<%= render :template => 'groups/new' %>
+				<%= hidden_field_tag :nodelist_data %>
+				<div class= "FormElement"> <%= button_tag :Start, :type => :button, :onclick => "parse_sel_submit('nodelist', 'new_game', 'nodelist_data');"%></div>
+			</div>	
+		<% end %>
 	</div>
 </div>

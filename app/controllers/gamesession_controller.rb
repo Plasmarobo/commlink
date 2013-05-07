@@ -20,6 +20,7 @@ class GamesessionController < ApplicationController
 
   def new
       @player = nil
+      @user = User.find_by_id session[:user_id]
       #Just render the new form
   end
 

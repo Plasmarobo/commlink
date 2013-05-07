@@ -53,6 +53,7 @@ class NodeController < ApplicationController
   end
 
   def list
+    @user = User.find_by_id session[:user_id]
     @player = Player.find_by_id session[:player_id]
     if !@player
       redirect_to :controller => :player, :action => :select

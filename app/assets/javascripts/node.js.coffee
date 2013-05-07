@@ -5,8 +5,8 @@ window.select_node = (target, nodeid, classtarget) ->
   $("#nodeid").val nodeid
   $(target).addClass classtarget
 
-window.move_sel = (source, classtarget, dest) ->
-  $("#" + source).children("." + classtarget).each (index) ->
+window.move_sel = (source, dest) ->
+  $("#" + source).each (index) ->
     $("#" + dest).add index
     $(index).remove()
 

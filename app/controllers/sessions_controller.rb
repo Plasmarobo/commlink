@@ -38,8 +38,10 @@ class SessionsController < ApplicationController
   end
 
   def profile
+    @user = User.find_by_id session[:user_id]
   end
 
   def setting
+    @user = User.find_by_id session[:user_id]
   end
 end
