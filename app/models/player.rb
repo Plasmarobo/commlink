@@ -2,9 +2,11 @@ class Player < ActiveRecord::Base
 	belongs_to :user
   has_many :nodes, dependent: :destroy
 	has_many :groups
+  has_many :visiblenodes, dependent: :destroy
 	has_many :gamesessions, through: :groups
 	has_one :skillset, dependent: :destroy, foreign_key: :id
-  attr_accessible :id, :user_id, :name, :programset_id, :condition, :stun
+
+  attr_accessible :id, :user_id, :name, :programset_id, :condition, :stun, :skillset_id
     
 	def parsexml
   	@skillset = Skillset.new
@@ -27,4 +29,6 @@ class Player < ActiveRecord::Base
   	@player.save
   	return true
   end
+
+
 end

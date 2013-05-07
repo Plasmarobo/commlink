@@ -38,7 +38,7 @@ class FrienderController < ApplicationController
  			return false
  		end
  	else
-  		flash[:notice] = "Could find user"
+  		flash[:notice] = "Could not find user"
   		flash[:color] = "invalid"
 		  redirect_to :back
   		return false

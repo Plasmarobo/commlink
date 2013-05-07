@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505202550) do
+ActiveRecord::Schema.define(:version => 20130506212947) do
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "group_id"
@@ -134,6 +134,13 @@ ActiveRecord::Schema.define(:version => 20130505202550) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+  end
+
+  create_table "visiblenodes", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "node_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

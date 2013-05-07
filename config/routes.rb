@@ -1,5 +1,8 @@
 Commlink::Application.routes.draw do
 
+  resources :visiblenodes
+
+
   post "friender/create"
 
   get "friender/add"
