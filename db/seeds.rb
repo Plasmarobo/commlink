@@ -8,15 +8,15 @@
 
 User.create([{username: 'dan', email: 'dmcnamara1@gmail.com', password: 'dicksdicks', password_confirmation: 'dicksdicks'}, {username: 'austen', email: 'plasmarobo@gmail.com', password: 'dicksdicks', password_confirmation: 'dicksdicks'}])
 
-@ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
-@ss_elias, @ss_gwydion, @ss_bob = Skillset.create(), Skillset.create(), Skillset.create()
 
 if Rails.env.development?
+  @ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
+  
+
   elias = {
     user_id: 2,
     name: "Elias",
     programset_id: @ps_elias.id,
-    skillset_id: @ss_elias.id,
     condition: 6,
     stun: 6
   }
@@ -25,7 +25,6 @@ if Rails.env.development?
     user_id: 1,
     name: "Gwydion",
     programset_id: @ps_gwydion.id,
-    skillset_id: @ss_gwydion.id,
     condition: 0,
     stun: 0
   }
@@ -34,16 +33,18 @@ if Rails.env.development?
     user_id: 2,
     name: "Bob",
     programset_id: @ps_bob.id,
-    skillset_id: @ss_bob.id,
     condition: 1,
     stun: 3
   }
-  elias = Player.create(elias)
-  gwydion = Player.create(gwydion)
-  bob = Player.create(bob)
+  elias = Player.find_or_create_by_name(elias)
+  gwydion = Player.find_or_create_by_name(gwydion)
+  bob = Player.find_or_create_by_name(bob)
 
-  Pal.create(user_id: 1, pal_id: 2)
-  Pal.create(user_id: 2, pal_id: 1)
+  Skillset.create(id: elias.id)
+  Skillset.create(id: gwydion.id)
+  Skillset.create(id: bob.id)
+  Pal.create(user_id: elias.id, pal_id: gwydion.id)
+  Pal.create(user_id: gwydion.id, pal_id: elias.id)
 
   #Create some player nodes
   Node.create(player_id: 1, name: "A Clarinet", desc: "This is actually a woodwind instrument, not a computer.", programset_id: @ps_gwydion.id, system: 1, firewall: 1, response: 1, pilot: 0, signal: 400, gm_id: nil)  

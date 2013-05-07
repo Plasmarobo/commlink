@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506222831) do
+ActiveRecord::Schema.define(:version => 20130506212947) do
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "group_id"
@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(:version => 20130506222831) do
     t.integer  "user_id"
     t.integer  "condition"
     t.integer  "stun"
-    t.integer  "skillset_id"
   end
 
   create_table "programsets", :force => true do |t|
