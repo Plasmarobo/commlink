@@ -1,0 +1,21 @@
+<h1>Listing programset_templates</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @programset_templates.each do |programset_template| %>
+  <tr>
+    <td><%= link_to 'Show', programset_template %></td>
+    <td><%= link_to 'Edit', edit_programset_template_path(programset_template) %></td>
+    <td><%= link_to 'Destroy', programset_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Programset template', new_programset_template_path %>

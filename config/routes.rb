@@ -1,5 +1,8 @@
 Commlink::Application.routes.draw do
 
+  resources :programset_templates
+
+
   resources :visiblenodes
 
 

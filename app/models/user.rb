@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :players, dependent: :destroy
   has_many :pals, dependent: :destroy
   has_many :nodes, dependent: :destroy, :foreign_key => :gm_id
+  has_many :programset_templates, dependent: :destroy
   
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :username, :presence => true, :uniqueness => true, :length =>  { :in => 3..20 }

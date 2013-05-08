@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506212947) do
+ActiveRecord::Schema.define(:version => 20130508225540) do
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "group_id"
@@ -77,16 +77,16 @@ ActiveRecord::Schema.define(:version => 20130506212947) do
 
   create_table "players", :force => true do |t|
     t.string   "name"
-    t.integer  "programset_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.integer  "condition"
     t.integer  "stun"
   end
 
-  create_table "programsets", :force => true do |t|
-    t.integer  "node_id"
+  create_table "programset_templates", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
     t.integer  "analyze",            :default => 1
     t.integer  "browse",             :default => 1
     t.integer  "command",            :default => 0
