@@ -2,14 +2,14 @@ class Skillset < ActiveRecord::Base
   belongs_to :player
   attr_accessible :id, :computer, :cybercombat, :datasearch, :electronic_warfare, :hacking, :hardware, :npc_id, :player_id, :software
   
-  def create_from_parameters(params)
+  def update_from(params)
       self.computer = params[:skill_computer]
-      self.computer = params[:skill_cybercombat]
-      self.computer = params[:skill_datasearch]
-      self.computer = params[:skill_electronic_warfare]
-      self.computer = params[:skill_hacking]
-      self.computer = params[:skill_hardware]
-      self.computer = params[:skill_software]
+      self.cybercombat = params[:skill_cybercombat]
+      self.datasearch = params[:skill_datasearch]
+      self.electronic_warfare = params[:skill_electronic_warfare]
+      self.hacking = params[:skill_hacking]
+      self.hardware = params[:skill_hardware]
+      self.software = params[:skill_software]
   end
 
   def item_names
@@ -23,4 +23,5 @@ class Skillset < ActiveRecord::Base
   		software: "Software"
   	}
   end
+
 end

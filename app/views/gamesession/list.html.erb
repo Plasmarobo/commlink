@@ -3,15 +3,23 @@
 	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
 	<div class= "Title">Games you are running</div>
 	<div class= "ListContainer">
-	<% Gamesession.where("gm_id = ?", session[:user_id]).each do |p| %>
-	<div class= "ListElement"> <%= link_to p.name, :action => :manage, :id => p.id %></div>
+	<% @user.gamesessions.each do |p| %>
+	<div class= "ListElement"> 
+    <%= link_to p.name, :action => :manage, :id => p.id %>
+    <%= link_to image_tag("delete16.png", :border => 0), {:controller => :gamesession, :action => :delete, :id => p.id}, :class => "DeleteTag" %> 
+  </div>
 	<% end %>
 	</div>
 	<%= button_to "Start a Game", :action => :new %>
 	<div class= "Title">Games you are playing</div>
-	<div class= "ListContainer">
-	<% Group.joins(:gamesession).where(:player_id => session[:user_id]).each do |p| %>
-	<div class= "ListElement"> <%= link_to p.name, :action => :player, :id => p.id %></div>
+	<% @players.each do |p| %>
+    <div class="Title"> <%= p.name %></div>
+	  <div class= "ListContainer">
+		<% p.gamesessions.each do |g| %>
+      <div class= "ListElement">
+			 <%= link_to g.name, {:controller => :gamesession, :action => :player, :game_id => g.id, :player_id => p.id} %>
+      </div>
+		<% end %>
+    </div>
 	<% end %>
-	</div>
 </div>

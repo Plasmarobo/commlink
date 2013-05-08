@@ -7,6 +7,6 @@
 <div class="Title">Groups Owned</div>
 <div class="List">
 	<% Group.join(:gamesession).where(:gm_id => session[:user_id]).each do |g| %>
-		<div class="ListElement"> <%= link_to g.id, :controller => :gamesession, :action => :manage, :game_id => g.gamesession_id %> <%= link_to image_tag("edit16.png", :border => 0), :controller => :group, :action => :edit, :id => f.id %></div>
+		<div class="ListElement"> <%= link_to g.id, :controller => :gamesession, :action => :manage, :game_id => g.gamesession_id %> <%= link_to image_tag("edit16.png", :border => 0), {:controller => :group, :action => :edit, :id => f.id}, :class => "EditTag" %></div>
 		<% end %>
 </div>

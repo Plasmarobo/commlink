@@ -17,6 +17,10 @@ class ProgramsetController < ApplicationController
   	#Just render the form
   end
 
+  def list
+    @programset = Programset.find_by_id params[:id]
+  end
+
   def delete
   	#Just render the delete dialog
   end

@@ -1,3 +1,5 @@
 <div class='UserTitle'><%= @current_user.username%>'s Profile </div>
+<p class="Title">Pals</p>
+<p class=<%= flash[:color] %>> <%= flash[:notice] %></p>
 <%= render :template => 'friender/list' %>
 <%= render :template => 'friender/add' %>

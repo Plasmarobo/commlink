@@ -1,11 +1,9 @@
-
-<div class= "Sign_Form">
-	<div class= "Title">Pals</div>
-	<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
-	<div class= "ListContainer">
-	<% User.find_by_id(session[:user_id]).pals.each do |p| %>
+	
+<div class="Title">Pals</div>
+<div class= "ListContainer" id="pals">
+	<% @user.pals.each do |p| %>
 	 <% username = User.find_by_id(p.pal_id).username %>
-	 <div class= "ListElement"> <%=  username + " " %><%= link_to image_tag("delete16.png", :border => 0), :controller => :friender, :action => :remove, :id => p.id, :username => username %>  </div>
+	 <%= content_tag(:div, ("#{username} " + link_to(image_tag("delete16.png", :border => 0), {:controller => :friender, :action => :remove, :id => p.id, :username => username}, :class => "DeleteTag")).html_safe, :onclick => "select_list_item(this, \'#{username}\', 'ListSel', '#pal_data')", :class => "ListElement InSelector") %>
+   </div>
 	<% end %>
-	</div>
-</div>
+  <%= hidden_field_tag :pal_data %>
