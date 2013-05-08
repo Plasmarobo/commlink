@@ -5,8 +5,8 @@ class Gamesession < ActiveRecord::Base
   has_one :group
   has_many :players, through: :groups
 
-  validates :name, :presence => true, :uniqueness => true, :length {:in => 3..30}
-  validates :group, :prescence => true
+  validates :name, :presence => true, :uniqueness => true, :length => {:in => 3..30}
+  validates :group, :presence => true
 
   def create(params)
     self.name = params[:name]
