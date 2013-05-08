@@ -1,2 +1,23 @@
-<h1>Node#edit</h1>
-<p>Find me in app/views/node/edit.html.erb</p>
+<div class="Title">Editing Node</div>
+<div class="FormContainer">
+  <%= form_for @node, :url => {:controller => :node, :action => :edit_attempt} do |n| %>
+    <p> Name: <%= n.text_field, :name, @node.name %></p>
+    <p> Description: <%= n.text_area, :desc, @node.desc %></p>
+    <p> System: <%= n.number_field, :system, @node.system %>
+    <p> Firewall: <%= n.number_field, :firewall, @node.firewall %></p>
+    <p> Response: <%= n.number_field, :response, @node.response %></p>
+    <p> Signal: <%= n.number_field, :signal, @node.signal %></p>
+    <p> Pilot: <%= n.number_field, :pilot, @node.pilot %></p>
+    <% @player = Player.find_by_id(@node.player_id) %>
+    <% @user = User.find_by_id(@node.gm_id) %>
+    <% if @player do %>
+      <p>Player: <%= n.text_field, :username, @player.name, :disabled => :true %></p>
+    <% end %>
+    <% if @user do %>
+      <p>GM: <%= n.text_field, :username, @user.username, :disabled => :true %></p>
+    <% end %>
+    <% @programset = Programset.find_by_id @node.programset_id %>
+    <%= render "programset/edit" %>
+    <% n.submit_tag :Save %>
+  <% end %>
+</div>

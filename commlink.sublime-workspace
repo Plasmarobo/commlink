@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"program",
+				"programset_id"
+			],
+			[
 				"inline",
 				"inline-block"
 			],
@@ -16,66 +20,43 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/gamesession/new.html.erb",
+			"file": "app/views/node/manage.html.erb",
 			"settings":
 			{
-				"buffer_size": 1640,
+				"buffer_size": 757,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/util.js.coffee",
+			"file": "app/controllers/node_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1151,
+				"buffer_size": 1932,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/routes.rb",
+			"file": "app/assets/javascripts/windowmanager.js.coffee",
 			"settings":
 			{
-				"buffer_size": 3903,
+				"buffer_size": 1304,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/friender/list.html.erb",
+			"file": "app/assets/stylesheets/window_manager.css.scss",
 			"settings":
 			{
-				"buffer_size": 540,
-				"line_ending": "Unix"
+				"buffer_size": 264,
+				"line_ending": "Unix",
+				"name": ".WindowManager{"
 			}
 		},
 		{
 			"file": "app/assets/stylesheets/application.css",
 			"settings":
 			{
-				"buffer_size": 3153,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/gamesession_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1800,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/groups/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 898,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/gamesession.rb",
-			"settings":
-			{
-				"buffer_size": 379,
+				"buffer_size": 4339,
 				"line_ending": "Unix"
 			}
 		}
@@ -104,31 +85,35 @@
 	},
 	"file_history":
 	[
-		"/home/austenh/commlink/app/views/node/list.html.erb",
-		"/home/austenh/commlink/app/views/groups/new.html.erb",
-		"/home/austenh/commlink/app/models/user.rb",
+		"/home/austenh/commlink/app/views/programset/list.html.erb",
+		"/home/austenh/commlink/app/controllers/programset_controller.rb",
+		"/home/austenh/commlink/config/routes.rb",
 		"/home/austenh/commlink/app/controllers/node_controller.rb",
-		"/home/austenh/commlink/app/views/node/manage.html.erb",
+		"/home/austenh/commlink/app/models/node.rb",
+		"/home/austenh/commlink/app/views/node/edit.html.erb",
+		"/home/austenh/commlink/app/models/gamesession.rb",
+		"/home/austenh/commlink/app/views/groups/new.html.erb",
+		"/home/austenh/commlink/app/controllers/gamesession_controller.rb",
+		"/home/austenh/commlink/app/assets/stylesheets/application.css",
 		"/home/austenh/commlink/app/views/friender/list.html.erb",
+		"/home/austenh/commlink/app/assets/javascripts/util.js.coffee",
+		"/home/austenh/commlink/app/views/gamesession/new.html.erb",
+		"/home/austenh/commlink/app/views/node/list.html.erb",
+		"/home/austenh/commlink/app/models/user.rb",
+		"/home/austenh/commlink/app/views/node/manage.html.erb",
 		"/home/austenh/commlink/app/views/groups/list.html.erb",
 		"/home/austenh/commlink/app/views/gamesession/list.html.erb",
 		"/home/austenh/commlink/app/views/player/list.html.erb",
 		"/home/austenh/commlink/app/views/gamesession/player.html.erb",
-		"/home/austenh/commlink/app/assets/javascripts/util.js.coffee",
-		"/home/austenh/commlink/app/assets/stylesheets/application.css",
 		"/home/austenh/commlink/app/assets/javascripts/node.js.coffee",
-		"/home/austenh/commlink/app/controllers/gamesession_controller.rb",
 		"/home/austenh/commlink/app/views/node/new.html.erb",
 		"/home/austenh/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/home/austenh/commlink/app/assets/stylesheets/node.css.scss",
-		"/home/austenh/commlink/app/models/gamesession.rb",
 		"/home/austenh/commlink/app/models/player.rb",
 		"/home/austenh/commlink/app/views/skillset/new.html.erb",
 		"/home/austenh/commlink/app/controllers/skillset_controller.rb",
 		"/home/austenh/commlink/app/views/skillset/delete.html.erb",
-		"/home/austenh/commlink/config/routes.rb",
 		"/home/austenh/commlink/app/views/programset/new.html.erb",
-		"/home/austenh/commlink/app/controllers/programset_controller.rb",
 		"/home/austenh/commlink/app/views/programset/delete.html.erb",
 		"/home/austenh/commlink/app/views/sessions/home.html.erb",
 		"/home/austenh/commlink/app/views/sessions/login.html.erb",
@@ -137,7 +122,6 @@
 		"/home/austenh/commlink/app/controllers/sessions_controller.rb",
 		"/home/austenh/commlink/app/views/layouts/application.html.erb",
 		"/home/austenh/commlink/app/controllers/player_controller.rb",
-		"/home/austenh/commlink/app/models/node.rb",
 		"/home/austenh/commlink/app/models/programset.rb",
 		"/home/austenh/commlink/app/models/skillset.rb",
 		"/home/austenh/commlink/app/assets/stylesheets/scaffolds.css.scss",
@@ -157,7 +141,6 @@
 		"/home/austenh/commlink/app/views/gamesession/delete.html.erb",
 		"/home/austenh/commlink/app/views/gamesession/gm.html.erb",
 		"/home/austenh/commlink/app/views/gamesession/manage.html.erb",
-		"/home/austenh/commlink/app/views/gamesession/new.html.erb",
 		"/home/austenh/commlink/db/schema.rb",
 		"/home/austenh/commlink/db/migrate/20130503140312_create_groups.rb",
 		"/home/austenh/commlink/db/migrate/20130503140408_create_gamesessions.rb",
@@ -213,105 +196,23 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/gamesession/new.html.erb",
+					"file": "app/views/node/manage.html.erb",
 					"settings":
 					{
-						"buffer_size": 1640,
+						"buffer_size": 757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1526,
-								1526
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 117.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/assets/javascripts/util.js.coffee",
-					"settings":
-					{
-						"buffer_size": 1151,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								926,
-								926
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 3903,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1054,
-								1054
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 867.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/friender/list.html.erb",
-					"settings":
-					{
-						"buffer_size": 540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								31,
-								31
+								261,
+								261
 							]
 						],
 						"settings":
@@ -325,46 +226,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/assets/stylesheets/application.css",
+					"buffer": 1,
+					"file": "app/controllers/node_controller.rb",
 					"settings":
 					{
-						"buffer_size": 3153,
+						"buffer_size": 1932,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3094,
-								3094
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4029.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/controllers/gamesession_controller.rb",
-					"settings":
-					{
-						"buffer_size": 1800,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								836,
-								836
+								1717,
+								1717
 							]
 						],
 						"settings":
@@ -374,60 +248,87 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 714.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/views/groups/new.html.erb",
+					"buffer": 2,
+					"file": "app/assets/javascripts/windowmanager.js.coffee",
 					"settings":
 					{
-						"buffer_size": 898,
+						"buffer_size": 1304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								341,
-								341
+								873,
+								873
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/stylesheets/window_manager.css.scss",
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".WindowManager{",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/stylesheets/application.css",
+					"settings":
+					{
+						"buffer_size": 4339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3316,
+								3316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/models/gamesession.rb",
-					"settings":
-					{
-						"buffer_size": 379,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								368,
-								368
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4248.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

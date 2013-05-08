@@ -47,6 +47,10 @@ Commlink::Application.routes.draw do
 
   get "programset/delete"
 
+  get "programset/list"
+
+  post "programset/list"
+
   get "node/new"
 
   post "node/new"

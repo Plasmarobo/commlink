@@ -62,16 +62,18 @@ class NodeController < ApplicationController
 
   def manage
     @user = User.find_by_id session[:user_id]
-    @player = Player.find_by_id params[:player_id]
   end
 
   def edit
     #Just render a nice chunk
+    @node = Node.find_by_id params[:id]
   end
 
 
 
-  def attempt_edit
+  def edit_attempt
+    @node
+    @programset
   end
 
   def delete
