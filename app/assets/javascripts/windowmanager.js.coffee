@@ -29,7 +29,7 @@ window.hide_loading_notice = (target) ->
   $(target).remove()
 
 window.progress = (percent, container, bar) ->
-  progressBarWidth = percent * $(container).width() / 100
+  progressBarWidth = percent * $(bar).parent().width() / 100
   $(container).find(bar).animate(
     width: progressBarWidth
   , 500).html percent + "%&nbsp;"

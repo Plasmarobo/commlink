@@ -63,9 +63,15 @@ Commlink::Application.routes.draw do
 
   get "node/edit"
 
+  post "node/edit"
+
   get "node/manage"
 
   get "node/delete"
+
+  post "node/edit_attempt"
+
+  get "node/edit_attempt"
 
   get "groups/new"
 

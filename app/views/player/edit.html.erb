@@ -2,7 +2,7 @@
 				<div class= "Sign_Form">
 					<div class="Title">Edit Player</div>
 					<p class="<%= flash[:color] %>"><%= flash[:notice] %></p>
-					<%= form_for(:player, :url => {:controller => 'player', :action => :edit_attempt}) do |f| %>
+					<%= form_for(:player, :url => {:controller => 'player', :action => :edit_attempt, :id => params[:id]}) do |f| %>
 
 						<p> Name:</br> <%= f.text_field :name %> </p>
 						<p> Condition:</br> <%= f.text_field :condition %> </p>

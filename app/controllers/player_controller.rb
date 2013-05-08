@@ -42,6 +42,9 @@ class PlayerController < ApplicationController
   end
 
   def edit_attempt
+    @player = Player.find_by_id params[:id]
+    @player.update_from params[:player]
+    @player.skillset.update_from params
       flash[:notice] = "Update Successful"
       flash[:color] = "valid"
     if !@player.save
@@ -50,14 +53,8 @@ class PlayerController < ApplicationController
       render "edit"
       return false
     end
-    if !@skillset.save
+    if !@player.skillset.save
       flash[:notice] = "Could not update Skills"
-      flash[:color] = "invalid"
-      render "edit"
-      return false
-    end
-    if !@programset.save
-      flash[:notice] = "Could not update Programs"
       flash[:color] = "invalid"
       render "edit"
       return false
