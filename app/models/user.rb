@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :gamesessions, dependent: :destroy, foreign_key: :gm_id
   has_many :players, dependent: :destroy
   has_many :pals, dependent: :destroy
-  has_many :nodes, dependent: :destroy, :foreign_key => :gm_id
+  has_many :nodes, dependent: :destroy, through: :gamesessions
   has_many :programset_templates, dependent: :destroy
   
 	EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
