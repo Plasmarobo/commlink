@@ -1,13 +1,14 @@
 
 class Gamesession < ActiveRecord::Base
-  attr_accessible :id, :gm_id, :group_id, :name
-  belongs_to :user, :foreign_key => :gm_id
-  has_one :group
+  attr_accessible :id, :gm_id, :name
+  belongs_to :user
+  has_many :groups
   has_many :players, through: :groups
   has_many :nodes
 
-  validates :name, :presence => true, :uniqueness => true, :length => {:in => 3..30}
-  validates :group, :presence => true
+  # validates :name, :presence => true, :uniqueness => true, :length => {:in => 3..30}
+  validates :name, :presence => true, :length => {:in => 3..30}
+  # validates :group, :presence => true
 
   def update_from(params)
     self.name = params[:name]

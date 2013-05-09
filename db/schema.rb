@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508225540) do
+ActiveRecord::Schema.define(:version => 20130509133224) do
 
   create_table "gamesessions", :force => true do |t|
-    t.integer  "group_id"
     t.integer  "gm_id"
     t.string   "name"
     t.datetime "created_at", :null => false
