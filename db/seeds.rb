@@ -50,15 +50,16 @@ if Rails.env.development?
   Node.create(player_id: 3, name: "Bob's Comm", desc: "He calls his mom with it.", programset_id: @ps_elias.id, system: 3, firewall: 5, response: 4, pilot: 0, signal: 40, gamesession_id: nil)  
 
   game1 = Gamesession.create(group_id: 1, gm_id: 1, name: "Epic Game")
-  game2 = Gamesession.create(group_id: 2, gm_id: 2, name: "Slightly Less Epic Game")
+  game2 = Gamesession.create(group_id: 1, gm_id: 2, name: "Slightly Less Epic Game")
 
   #create some gm nodes
   ps_node1, ps_node2, ps_node3, ps_node4 = Programset.create, Programset.create, Programset.create, Programset.create
-  Node.create(player_id: nil, name: "Ares Mainframe", desc: "", programset_id: ps_node1.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game1.id)  
-  Node.create(player_id: nil, name: "Aztchnology Mainframe", desc: "", programset_id: ps_node2.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game1.id)  
-  Node.create(player_id: nil, name: "Ares Mainframe", desc: "", programset_id: ps_node3.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game2.id)  
-  Node.create(player_id: nil, name: "Aztehcnology Mainframe", desc: "", programset_id: ps_node4.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game2.id)  
+  Node.find_or_create_by_name(player_id: nil, name: "Ares Mainframe Alpha", desc: "", programset_id: ps_node1.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game1.id)  
+  Node.find_or_create_by_name(player_id: nil, name: "Aztchnology Mainframe Alpha", desc: "", programset_id: ps_node2.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game1.id)  
+  Node.find_or_create_by_name(player_id: nil, name: "Ares Mainframe Beta", desc: "", programset_id: ps_node3.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game2.id)  
+  Node.find_or_create_by_name(player_id: nil, name: "Aztehcnology Mainframe Beta", desc: "", programset_id: ps_node4.id, system: 6, firewall: 6, response: 6, pilot: 0, signal: 80, gamesession_id: game2.id)  
   
   Group.create([{gamesession_id: game1.id, player_id: elias.id},{gamesession_id: game1.id, player_id: bob.id},{gamesession_id: game2.id, player_id: gwydion.id},{gamesession_id: game2.id, player_id: elias.id}])
+
 end
 
