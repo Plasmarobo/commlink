@@ -33,6 +33,10 @@ class PlayerController < ApplicationController
     end
   end
 
+  def set
+    #Do nothing, just render the template and let it take care of e're thing
+  end
+
   def edit
   	#Display the edit form
     @user = User.find_by_id session[:user_id]

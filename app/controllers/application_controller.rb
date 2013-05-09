@@ -21,14 +21,14 @@ class ApplicationController < ActionController::Base
 
 	def authenticate_player
 		unless session[:player_id]
-			redirect_to(:controller => 'player', :action => 'list')
+			redirect_to(:controller => 'player', :action => 'set')
 			return false
 		else
-			@current_player = Player.find_by_id session[:player_id]
-			if @current_player.user_id == session[:user_id]
+			current_player = Player.find_by_id session[:player_id]
+			if current_player.user_id == session[:user_id]
 				return true
 			else
-				redurect_to(:controller => 'player', :action => 'list')
+				redurect_to(:controller => 'player', :action => 'set')
 				return false
 			end
 		end

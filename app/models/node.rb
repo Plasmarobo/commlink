@@ -1,7 +1,7 @@
 class Node < ActiveRecord::Base
   belongs_to :player
-  has_one :user, through: :gamesessions, foreign_key: :gm_id
-  belongs_to :gamesession
+  has_one :user, through: :gamesession, foreign_key: :gm_id
+  belongs_to :gamesession, foreign_key: :gamesession_id
   has_many :visiblenodes
   has_one :programset
   attr_accessible :id, :desc, :firewall, :gamesession_id, :name, :pilot, :player_id, :programset_id, :response, :signal, :system

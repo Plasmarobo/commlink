@@ -19,8 +19,8 @@
     <% if user %>
       <p>GM: <%= text_field_tag :gm, user.username, :disabled => :true %></p>
     <% end %>
-    <% programset = Programset.find_by_id @node.programset_id %>
-    <%= render :template => "programset/edit", :programset => programset, :as => @programset %>
+    <% @programset = Programset.find_by_id @node.programset_id %>
+    <%= render :template => "programset/edit", :@programset => @programset %>
     <%= submit_tag :Save %>
   <% end %>
 </div>

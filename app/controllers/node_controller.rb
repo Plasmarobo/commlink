@@ -54,10 +54,6 @@ class NodeController < ApplicationController
 
   def list
     @user = User.find_by_id session[:user_id]
-    @player = Player.find_by_id session[:player_id]
-    if !@player
-      redirect_to :controller => :player, :action => :select
-    end
   end
 
   def manage
@@ -67,13 +63,32 @@ class NodeController < ApplicationController
   def edit
     #Just render a nice chunk
     @node = Node.find_by_id params[:id]
+    respond_to do |format|
+      format.html {render 'edit', layout: false} if request.xhr?
+      format.html {render 'edit'}
+    end
   end
 
 
 
   def edit_attempt
-    @node
-    @programset
+    @node = Node.find_by_id params[:id]
+    @node.update_from(params)
+    @node.programset.update_from(params)
+    if !@node.programset.save
+      flash[:notice] = "Could not save programset"
+      flash[:color] = "invalid"
+      redirect_to :back
+      return false
+    end
+    if !@node.save
+      flash[:notice] = "Could not save node"
+      flash[:color] = "invalid"
+      redirect_to :back
+      return false
+    end
+    redirect_to controller: :node, action: :list
+    return true
   end
 
   def delete
@@ -81,5 +96,7 @@ class NodeController < ApplicationController
   end
 
   def attempt_delete
+    @node = Node.find_by_id params[:id]
+    @node.destroy
   end
 end

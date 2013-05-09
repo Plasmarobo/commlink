@@ -1,6 +1,5 @@
 class GamesessionController < ApplicationController
   before_filter :authenticate_user
-  #before_filter :authenticate_player, :only => [ :player ]
   before_filter :authenticate_gm, :only => [ :manage, :advance, :delete ]
   before_filter :authenticate_gamesession, :only => [ :gm, :player, :manage, :delete, :advance ]
 
@@ -27,11 +26,12 @@ class GamesessionController < ApplicationController
   def new
       @player = nil
       @user = User.find_by_id session[:user_id]
+      @name = Gamesession.new
       #Just render the new form
   end
 
   def create
-    @game = Gamesession.new(params[:name], params[:nodelist_data], params[:playerlist_data])
+    @game.create_from(params)
     if !@game.save
       redirect :back
       return false
@@ -43,13 +43,12 @@ class GamesessionController < ApplicationController
   end
 
   def list
-    #Render the list of valid game sessions
     @user = User.find_by_id session[:user_id]
     @players = Player.find_all_by_user_id session[:user_id]
   end
 
   def select
-    @gs = Gamesession.find_by_name params[:session_name]
+    gs = Gamesession.find_by_name params[:name]
     Group.find_by_gamesession_id @gs.id do |g| 
       if g.player_id == params[:player_id] 
         session[:gamesession_id] = @gs.id
@@ -64,6 +63,13 @@ class GamesessionController < ApplicationController
   end
 
   def select_gm
+    gs = Gamesession.find_by_name params[:name]
+    if g.gm_id == session[:user_id]
+      session[:gamesession_id] = gs.id
+      return true
+    end
+    redirect_to :back
+    return false
   end
 
   def player
@@ -71,7 +77,7 @@ class GamesessionController < ApplicationController
     @game = Gamesession.find_by_id params[:game_id]
     @player = Player.find_by_id params[:player_id]
     if !@player 
-      redirect_to :back
+      redirect_to controller: :player, action: :sel
       return false
     end
 
