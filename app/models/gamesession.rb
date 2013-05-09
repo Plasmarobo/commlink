@@ -19,7 +19,7 @@ class Gamesession < ActiveRecord::Base
     self.update_from(params)
     node_ids = CSV.parse(params[:nodelist_data])
     player_ids = CSV.parse(params[:playerlist_data])
-    template_ids = CSV.parse(params[:node_templates])
+    template_ids = CSV.parse(params[:nodetemplate_data])
     node_ids.each do |n|
       node = Node.find_by_id n
       node.gamesession_id = self.id

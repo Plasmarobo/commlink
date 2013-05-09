@@ -3,7 +3,7 @@
 <% if @player != nil %>
 	<div class="Title">Player Nodes</div>
 		<div class="Subtext EditTag"> <%= link_to "Manage", {controller: :node, action: :manage, player_id: @player.id} %></div>
-		<div class="List">
+		<div class="ListContainer">
 		<% @player.nodes.each do |n| %>
 			<%= content_tag(:div, "#{n.name}", :onclick => "select_list_item(this, #{n.id}, 'ListSel', '#nodeid')", :class => "ListElement InSelector") %>
 		<% end %>
@@ -13,7 +13,7 @@
 
 <div class="Title">GM Nodes</div>
 <div class="Subtext EditTag"> <%= link_to "Manage", {controller: :node, action: :manage, user_id: @user.id} %></div>
-<div class="List">
+<div class="ListContainer">
 	<% @user.nodes.each do |n| %>
 		<%= content_tag(:div, "#{n.name}", :onclick => "select_list_item(this, #{n.id}, 'ListSel', '#nodeid')", :class => "ListElement InSelector") %>
 	<% end %>

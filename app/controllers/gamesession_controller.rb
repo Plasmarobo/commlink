@@ -4,18 +4,29 @@ class GamesessionController < ApplicationController
   before_filter :authenticate_gamesession, :only => [ :gm, :player, :manage, :delete, :advance ]
 
   def authenticate_gm
+    if params[:id]
+      session[:gamesession_id] = params[:id]
+    end
     @gamesession = Gamesession.find_by_id session[:gamesession_id]
+    if !session[:gamesession_id]
+      redirect_to controller: :gamesession, action: :list
+      return false
+    end
     if @gamesession.gm_id == session[:user_id]
       return true
     else
-      redirect_to :list
+      redirect_to controller: :gamesession, action: :list
       return false
     end
   end
 
   def authenticate_gamesession
+    if !session[:gamesession_id]
+      redirect_to :list
+      return false
+    end
     @gamesession = Gamesession.find_by_id session[:gamesession_id]
-    if @gamesession.players.include? session[:player_id] or @gamession.gm_id == session[:user_id]
+    if @gamesession.players.include? session[:player_id] or @gamesession.gm_id == session[:user_id]
       return true
     else
       redirect_to :list

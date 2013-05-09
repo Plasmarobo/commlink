@@ -1,0 +1,8 @@
+
+<div class="Subtext EditTag"> <%= link_to "Manage", {controller: :node, action: :manage, user_id: @user.id} %></div>
+<div class="ListContainer">
+  <% @user.node_templates.each do |n| %>
+    <%= content_tag(:div, "#{n.name}", :onclick => "select_list_item(this, #{n.id}, 'ListSel', '#nodetemplateid')", :class => "ListElement InSelector") %>
+  <% end %>
+  <%= hidden_field_tag(:nodetemplateid, :value => nil)%>
+</div>

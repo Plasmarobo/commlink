@@ -23,9 +23,9 @@
     <%= f.label :desc %><br />
     <%= f.text_area :desc %>
   </div>
-  <div class="field">
-    <%= f.label :programset_id %><br />
-    <%= f.number_field :programset_id %>
+  <div class="FormContainer">
+    <% @programset = Programset.find_by_id @node_template.programset_id %>
+    <%= render :template => "programset/edit", :@programset => @programset %>
   </div>
   <div class="field">
     <%= f.label :system %><br />

@@ -23,14 +23,28 @@
 					<div class="RightList" id="nodelist">
 					</div>	
 				</div>
+				<div class="Title">Node Templates</div>
+				<div class="SwitchList">
+					<div class="LeftList" id="tsrclist">
+						<%= render :template => 'node_templates/list' %>
+					</div>
+					<div class="CenterList">
+						<%= button_tag :ltr, :type => :button, :onclick => "move_sel('#tsrclist', 'ListSel','#nodetemplatelist');", :class => "SwitchButton" %>
+						<%= button_tag :rtl, :type => :button, :onclick => "move_sel('#nodetemplatelist', 'ListSel', '#tsrclist');", :class => "SwitchButton" %>
+						<%= button_tag :new, :controller => :node, :action => :new, :class => "SwitchButton" %>
+					</div>
+					<div class="RightList" id="nodetemplatelist">
+					</div>	
+				</div>
 				<div class="Title">Players</div>
 				
 				<%= render :template => 'groups/new' %>
 
 				<%= hidden_field_tag :nodelist_data %>
 				<%= hidden_field_tag :playerlist_data %>
+				<%= hidden_field_tag :nodetemplate_data %>
 			
-				<%= submit_tag :Start, :onclick => "parse_sel_submit('#new_game', '.ListElement', {'#nodelist' : '#nodelist_data', '#playerlist' : '#playerlist_data'});"%>
+				<%= submit_tag :Start, :onclick => "parse_sel_submit('#new_game', '.ListElement', {'#nodelist' : '#nodelist_data', '#playerlist' : '#playerlist_data', '#nodetemplate_data' : '#nodetemplatelist'});"%>
 			</div>	
 		<% end %>
 	</div>

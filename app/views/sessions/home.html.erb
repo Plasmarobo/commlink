@@ -2,6 +2,7 @@
 <div class="Title"><%= @user.username %></div>
 <p> Currently selected player is: <%=  @player ? @player.name : "no one" %> </p>
 <p> <%= link_to "Your Players", :controller => :player, :action => :list %> </p>
+<p> <%= link_to "Your Templates", :controller => :node_templates, :action => :list %> </p>
 <p> <%= link_to "Your Games", :controller => :gamesession, :action => :list %> </p>
 <p> <%= link_to "Your Groups", :controller => :groups, :action => :list %> </p>
 <p> <%= link_to "Your Profile", :action => :profile %> </p>
