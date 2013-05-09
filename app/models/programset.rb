@@ -3,7 +3,7 @@ class Programset < ActiveRecord::Base
   attr_accessible :id, :analyze, :armor, :attack, :biofeedback_filter, :black_hammer, :blackout, :browse, :command, :data_bomb, :decrypt, :defuse, :eccm, :edit, :encrypt, :exploit, :medic, :node_id, :reality_filter, :scan, :sniffer, :spoof, :stealth, :track
 
 
-  def create_from_parameters(params)
+  def update_from(params)
   	self.analyze = params[:prog_analyze]
     self.armor = params[:prog_armor]
     self.attack = params[:prog_attack]
