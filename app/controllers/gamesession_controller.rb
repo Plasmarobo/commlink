@@ -9,13 +9,19 @@ class GamesessionController < ApplicationController
     if @gamesession.gm_id == session[:user_id]
       return true
     else
-      redirect_to 
+      redirect_to :list
       return false
     end
   end
 
   def authenticate_gamesession
-
+    @gamesession = Gamesession.find_by_id session[:gamesession_id]
+    if @gamesession.players.include? session[:player_id] or @gamession.gm_id == session[:user_id]
+      return true
+    else
+      redirect_to :list
+      return false
+    end
   end
 
   def new
