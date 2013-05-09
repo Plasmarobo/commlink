@@ -30,8 +30,10 @@ class GamesessionController < ApplicationController
       redirect :back
       return false
     else
+      session[:gamesession_id] = @game.id
       redirect_to :controller => :gamesession, :action => :manage
       return true
+    end
   end
 
   def list
@@ -42,15 +44,13 @@ class GamesessionController < ApplicationController
 
   def select
     @gs = Gamesession.find_by_name params[:session_name]
-    Group.find_by_gs_id @gs.id do |g| 
+    Group.find_by_gamesession_id @gs.id do |g| 
       if g.player_id == params[:player_id] 
         session[:gamesession_id] = @gs.id
         return true
       end
       return false
     end
-    
-
   end
 
   def gm

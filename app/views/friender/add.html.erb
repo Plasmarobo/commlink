@@ -1,10 +1,13 @@
-
-				<div class= "FriendForm">
-					<div class="Title">Enter Username to add Pal</div>
-					<%= form_tag  :controller => :friender, :action => :create do %>
-						<p> Username:</br> <%= text_field_tag :username%> 
-						<%= submit_tag :Add %><div class="<%= flash[:color] %>"><%= flash[:notice] %></div></p>
-					<% end %>
-				</div>
+<div class= "FriendForm">
+	<div class="Title">
+    Enter Username to add Pal
+  </div>
+  <div class="<%= flash[:color] %>">
+    <%= flash[:notice] %>
+  </div>
+		<%= form_tag  :controller => :friender, :action => :create do %>
+		  <p> Username:</br> <%= text_field_tag :username%><%= submit_tag :Add %></p>
+		<% end %>
+</div>
 
 
