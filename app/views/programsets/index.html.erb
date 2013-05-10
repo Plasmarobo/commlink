@@ -1,0 +1,65 @@
+<div class="Title">Listing programsets</div>
+
+<table>
+  <tr>
+    <th>Node</th>
+    <th>Analyze</th>
+    <th>Armor</th>
+    <th>Attack</th>
+    <th>Biofeedback filter</th>
+    <th>Black hammer</th>
+    <th>Blackout</th>
+    <th>Command</th>
+    <th>Data bomb</th>
+    <th>Decrypt</th>
+    <th>Defuse</th>
+    <th>Eccm</th>
+    <th>Edit</th>
+    <th>Encrypt</th>
+    <th>Exploit</th>
+    <th>Medic</th>
+    <th>Reality filter</th>
+    <th>Scan</th>
+    <th>Sniffer</th>
+    <th>Spoof</th>
+    <th>Stealth</th>
+    <th>Track</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @programsets.each do |programset| %>
+  <tr>
+    <td><%= link_to "Edit", edit_node_path(programset.node_id) %></td>
+    <td><%= programset.analyze %></td>
+    <td><%= programset.armor %></td>
+    <td><%= programset.attack %></td>
+    <td><%= programset.biofeedback_filter %></td>
+    <td><%= programset.black_hammer %></td>
+    <td><%= programset.blackout %></td>
+    <td><%= programset.command %></td>
+    <td><%= programset.data_bomb %></td>
+    <td><%= programset.decrypt %></td>
+    <td><%= programset.defuse %></td>
+    <td><%= programset.eccm %></td>
+    <td><%= programset.edit %></td>
+    <td><%= programset.encrypt %></td>
+    <td><%= programset.exploit %></td>
+    <td><%= programset.medic %></td>
+    <td><%= programset.reality_filter %></td>
+    <td><%= programset.scan %></td>
+    <td><%= programset.sniffer %></td>
+    <td><%= programset.spoof %></td>
+    <td><%= programset.stealth %></td>
+    <td><%= programset.track %></td>
+    <td><%= link_to 'Show', programset %></td>
+    <td><%= link_to 'Edit', edit_programset_path(programset) %></td>
+    <td><%= link_to 'Destroy', programset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Programset', new_programset_path %>

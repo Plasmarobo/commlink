@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gm:</b>
+  <%= Users.find_by_id(@gamesession.gm_id).username %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @gamesession.name %>
+</p>
+<div class="Title">Nodes</div>
+<div class="ListContainer">
+  <% @gamesession.nodes.each do |n| %>
+    <div class="ListElement">
+      <%= link_to n.name, edit_node_path(n) %>
+    </div>
+  <% end %>
+</div>
+<div class="Title">Players</div>
+<div class="ListContainer">
+  <% @gamesession.nodes.each do |p| %>
+    <div class="ListElement">
+      <%= link_to p.name, show_player_path(p) %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_gamesession_path(@gamesession) %> |
+<%= link_to 'Back', gamesessions_path %>

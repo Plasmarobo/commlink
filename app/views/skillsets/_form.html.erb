@@ -1,0 +1,43 @@
+<%= form_for(@skillset) do |f| %>
+  <% if @skillset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skillset.errors.count, "error") %> prohibited this skillset from being saved:</h2>
+
+      <ul>
+      <% @skillset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :computer %><br />
+    <%= f.number_field :computer %>
+  </div>
+  <div class="field">
+    <%= f.label :cybercombat %><br />
+    <%= f.number_field :cybercombat %>
+  </div>
+  <div class="field">
+    <%= f.label :datasearch %><br />
+    <%= f.number_field :datasearch %>
+  </div>
+  <div class="field">
+    <%= f.label :electronic_warfare %><br />
+    <%= f.number_field :electronic_warfare %>
+  </div>
+  <div class="field">
+    <%= f.label :hacking %><br />
+    <%= f.number_field :hacking %>
+  </div>
+  <div class="field">
+    <%= f.label :hardware %><br />
+    <%= f.number_field :hardware %>
+  </div>
+  <div class="field">
+    <%= f.label :software %><br />
+    <%= f.number_field :software %>
+  </div>
+ 
+<% end %>

@@ -1,12 +1,14 @@
 require 'csv'
 class Gamesession < ActiveRecord::Base
+
   attr_accessible :gm_id, :name
 
   belongs_to :user, foreign_key: :gm_id
 
   has_many :groups
   has_many :players, through: :groups
-  has_many :nodes
+  has_many :nodes, foreign_key: :gamesession_id
+
 
   validates :name, presence: true, length: { :in => 3..30 } 
 

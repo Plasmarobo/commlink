@@ -1,0 +1,29 @@
+<div class="Title">Listing npcs</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Desc</th>
+    <th>Node</th>
+    <th>Secret</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @npcs.each do |npc| %>
+  <tr>
+    <td><%= npc.name %></td>
+    <td><%= npc.desc %></td>
+    <td><%= link_to "Edit", edit_node_path(npc.node_id) %></td>
+    <td><%= npc.secret %></td>
+    <td><%= link_to 'Show', npc %></td>
+    <td><%= link_to 'Edit', edit_npc_path(npc) %></td>
+    <td><%= link_to 'Destroy', npc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Npc', new_npc_path %>

@@ -1,0 +1,20 @@
+<div class="Title">Listing groups</div>
+
+<div class="ListContainer">
+  <% Gamesessions.all.each do |g| %>
+    <div class="GroupContainer">
+       <p><%= link_to "Group #{g.id}", edit_group_path(g) %><p>
+        <% g.group.players.each do |p| %>
+          <div class="ListElement">
+            <%= link_to p.name, show_player_path(p) %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<br />
+
+<%= link_to 'New Group', new_group_path %>

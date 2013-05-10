@@ -5,6 +5,7 @@ class NodeTemplate < ActiveRecord::Base
 
   has_one :programset
 
+
   def instance_node
     node = Node.new
     node.desc = self.desc

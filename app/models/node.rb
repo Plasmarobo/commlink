@@ -1,4 +1,5 @@
 class Node < ActiveRecord::Base
+
   attr_accessible :desc, :firewall, :gamesession_id, :name, :pilot, :player_id, :programset_id, :response, :signal, :system
 
   belongs_to :player_id

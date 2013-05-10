@@ -1,10 +1,10 @@
-<%= form_for(@node_template) do |f| %>
-  <% if @node_template.errors.any? %>
+<%= form_for(@node) do |f| %>
+  <% if @node.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@node_template.errors.count, "error") %> prohibited this node_template from being saved:</h2>
+      <h2><%= pluralize(@node.errors.count, "error") %> prohibited this node from being saved:</h2>
 
       <ul>
-      <% @node_template.errors.full_messages.each do |msg| %>
+      <% @node.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -17,19 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
-  </div>
-  <div class="FormContainer">
-    <% @programset = Programset.find_by_id @node_template.programset_id %>
-    <%= render :template => "programset/edit", :@programset => @programset %>
-  </div>
-  <div class="field">
-    <%= f.label :system %><br />
-    <%= f.number_field :system %>
+    <%= f.text_field :desc %>
   </div>
   <div class="field">
     <%= f.label :firewall %><br />
     <%= f.number_field :firewall %>
+  </div>
+  <div class="field">
+    <%= f.label :system %><br />
+    <%= f.number_field :system %>
   </div>
   <div class="field">
     <%= f.label :pilot %><br />
@@ -43,8 +39,7 @@
     <%= f.label :response %><br />
     <%= f.number_field :response %>
   </div>
-  <%= render 'progremsettemplate/index' %>
-  <%= render 'programset/form' %>
+  <%= render 'programset/edit' %>
   <div class="actions">
     <%= f.submit %>
   </div>
