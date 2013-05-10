@@ -1,15 +1,6 @@
-<div class="Title">Players : Pals</div>
-		<%= form_tag :action => :edit_attempt do %>
-		<div class="SwitchList">
-			<div class="LeftList">
-				<%= render :template => 'friender/list' %>
-			</div>
-			<div class="CenterList">
-				<%= button_tag :ltr %>
-				<%= button_tag :rtl %>
-			</div>
-			<div class="RightList" id="player_list">
-			</div>
-		</div>
-		<%= submit_tag :Submit %>
-		<% end %>
+<h1>Editing group</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @group %> |
+<%= link_to 'Back', groups_path %>

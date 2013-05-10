@@ -1,9 +1,9 @@
-<h1>Listing visiblenodes</h1>
+<div class="Title">Listing visiblenodes</div>
 
 <table>
   <tr>
-    <th>Player</th>
     <th>Node</th>
+    <th>Player</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +11,8 @@
 
 <% @visiblenodes.each do |visiblenode| %>
   <tr>
-    <td><%= visiblenode.player_id %></td>
     <td><%= visiblenode.node_id %></td>
+    <td><%= visiblenode.player_id %></td>
     <td><%= link_to 'Show', visiblenode %></td>
     <td><%= link_to 'Edit', edit_visiblenode_path(visiblenode) %></td>
     <td><%= link_to 'Destroy', visiblenode, method: :delete, data: { confirm: 'Are you sure?' } %></td>

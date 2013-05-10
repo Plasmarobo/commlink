@@ -1,7 +1,29 @@
-<h1>Listing programset_templates</h1>
+<div class="Title">Listing programset_templates</div>
 
 <table>
   <tr>
+    <th>User</th>
+    <th>Analyze</th>
+    <th>Armor</th>
+    <th>Attack</th>
+    <th>Biofeedback filter</th>
+    <th>Black hammer</th>
+    <th>Blackout</th>
+    <th>Command</th>
+    <th>Data bomb</th>
+    <th>Decrypt</th>
+    <th>Defuse</th>
+    <th>Eccm</th>
+    <th>Edit</th>
+    <th>Encrypt</th>
+    <th>Exploit</th>
+    <th>Medic</th>
+    <th>Reality filter</th>
+    <th>Scan</th>
+    <th>Sniffer</th>
+    <th>Spoof</th>
+    <th>Stealth</th>
+    <th>Track</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +31,28 @@
 
 <% @programset_templates.each do |programset_template| %>
   <tr>
+    <td><%= User.find_by_id(programset_template.user_id).username %></td>
+    <td><%= programset_template.analyze %></td>
+    <td><%= programset_template.armor %></td>
+    <td><%= programset_template.attack %></td>
+    <td><%= programset_template.biofeedback_filter %></td>
+    <td><%= programset_template.black_hammer %></td>
+    <td><%= programset_template.blackout %></td>
+    <td><%= programset_template.command %></td>
+    <td><%= programset_template.data_bomb %></td>
+    <td><%= programset_template.decrypt %></td>
+    <td><%= programset_template.defuse %></td>
+    <td><%= programset_template.eccm %></td>
+    <td><%= programset_template.edit %></td>
+    <td><%= programset_template.encrypt %></td>
+    <td><%= programset_template.exploit %></td>
+    <td><%= programset_template.medic %></td>
+    <td><%= programset_template.reality_filter %></td>
+    <td><%= programset_template.scan %></td>
+    <td><%= programset_template.sniffer %></td>
+    <td><%= programset_template.spoof %></td>
+    <td><%= programset_template.stealth %></td>
+    <td><%= programset_template.track %></td>
     <td><%= link_to 'Show', programset_template %></td>
     <td><%= link_to 'Edit', edit_programset_template_path(programset_template) %></td>
     <td><%= link_to 'Destroy', programset_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>

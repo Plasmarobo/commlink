@@ -1,7 +1,0 @@
-<% @page_title = "UnPal!?" -%>
-<div class= "Sign_Form">
-	<div class= "Title">Really UnPal <%= params[:username] %>?</div>
-	<p> This action cannot be undone! (but you could friend them again...) </p>
-	<p> <%= link_to "Yes, I understand I CANNOT (well not really) undo this", :controller => :friender, :action => :delete_attempt, :id => params[:id] %></p>
-	<p> <%= link_to "No, take me back", :back %> </p>
-</div>

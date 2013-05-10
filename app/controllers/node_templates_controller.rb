@@ -1,4 +1,5 @@
 class NodeTemplatesController < ApplicationController
+  before_filter :authenticate_user
   # GET /node_templates
   # GET /node_templates.json
   def index

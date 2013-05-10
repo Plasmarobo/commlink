@@ -1,23 +1,5 @@
+<div class="Title">New group</div>
 
-<div class="SwitchList">
-	<%= javascript_tag "$(document).ready(function() {supress_edit(); supress_delete();});" %>
-	<div class="LeftList" id="friends">
-		<% @user.pals.each do |p| %>
-			<% @pal = User.find_by_id p.pal_id %>
-			<div class="Title"><%= @pal.username %></div>
-			<div class="ListContainer">
-				<% @pal.players.each do |char| %>
-					<%= content_tag(:div, "#{char.name}", :onclick => "select_list_item(this, #{char.id}, 'ListSel', '#charid')", :class => "ListElement InSelector") %>
-				<% end %>
-			</div>
-		<% end %>
-	</div>
-	<div class="CenterList">
-		<%= button_tag :ltr, :type => :button, :onclick => "move_sel('#friends', 'ListSel','#playerlist');", :class => "SwitchButton" %>
-		<%= button_tag :rtl, :type => :button, :onclick => "move_sel('#playerlist', 'ListSel','#friends');", :class => "SwitchButton" %>
-	</div>
-	<div class="RightList" id="playerlist">
-	</div>
-</div>
+<%= render 'form' %>
 
-		
+<%= link_to 'Back', groups_path %>

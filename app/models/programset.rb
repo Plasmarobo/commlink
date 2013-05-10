@@ -1,10 +1,10 @@
 class Programset < ActiveRecord::Base
-  belongs_to :node
-  attr_accessible :id, :analyze, :armor, :attack, :biofeedback_filter, :black_hammer, :blackout, :browse, :command, :data_bomb, :decrypt, :defuse, :eccm, :edit, :encrypt, :exploit, :medic, :node_id, :reality_filter, :scan, :sniffer, :spoof, :stealth, :track
+  attr_accessible :analyze, :armor, :attack, :biofeedback_filter, :black_hammer, :blackout, :command, :data_bomb, :decrypt, :defuse, :eccm, :edit, :encrypt, :exploit, :medic, :node_id, :reality_filter, :scan, :sniffer, :spoof, :stealth, :track
 
+  belongs_to :node
 
   def update_from(params)
-  	self.analyze = params[:prog_analyze]
+    self.analyze = params[:prog_analyze]
     self.armor = params[:prog_armor]
     self.attack = params[:prog_attack]
     self.biofeedback_filter = params[:prog_biofeedback_filter]
@@ -28,8 +28,8 @@ class Programset < ActiveRecord::Base
     self.stealth = params[:prog_stealth]
     self.track = params[:prog_track]
   end
-  
- def zero
+
+  def zero
     self.analyze = 0
     self.armor = 0
     self.attack = 0
@@ -53,7 +53,6 @@ class Programset < ActiveRecord::Base
     self.stealth = 0
     self.track = 0
  end
-
 
  def item_names
         return { 

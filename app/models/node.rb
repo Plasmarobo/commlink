@@ -1,10 +1,13 @@
 class Node < ActiveRecord::Base
-  belongs_to :player
-  has_one :user, through: :gamesessions, foreign_key: :gm_id
+  attr_accessible :desc, :firewall, :gamesession_id, :name, :pilot, :player_id, :programset_id, :response, :signal, :system
+
+  belongs_to :player_id
   belongs_to :gamesession
+
+  has_one :programset_id
+  has_one :user, through: :gamesession, foreign_key: :gm_id
+
   has_many :visiblenodes
-  has_one :programset
-  attr_accessible :id, :desc, :firewall, :gamesession_id, :name, :pilot, :player_id, :programset_id, :response, :signal, :system
 
   def item_names
     return { 
@@ -15,4 +18,16 @@ class Node < ActiveRecord::Base
         pilot: "Pilot"
     }
   end
+
+  def create_from(params)
+    programset = Programset.new
+    if programset.create_from params
+      self.programset_id = programset.id
+    else
+      return false
+    end
+    self.create(params)
+    return self.save
+  end
+
 end

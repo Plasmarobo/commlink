@@ -11,38 +11,40 @@ User.create([{username: 'dan', email: 'dmcnamara1@gmail.com', password: 'dicksdi
 
 if Rails.env.development?
   @ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
+  @sk_elias, @sk_gwydion, @sk_bob = Skillset.create(), Skillset.create(), Skillset.create()
   
 
   elias = {
     user_id: 2,
     name: "Elias",
     condition: 6,
-    stun: 6
+    stun: 6,
+    skillset_id: 1
   }
-
+  
   gwydion = {
     user_id: 1,
     name: "Gwydion",
     condition: 0,
-    stun: 0
+    stun: 0,
+    skillset_id: 2
   }
 
   bob = {
     user_id: 2,
     name: "Bob",
     condition: 1,
-    stun: 3
+    stun: 3,
+    skillset_id: 3
   }
+
+  
   elias = Player.find_or_create_by_name(elias)
   gwydion = Player.find_or_create_by_name(gwydion)
   bob = Player.find_or_create_by_name(bob)
 
-  Skillset.find_or_create_by_id(id: elias.id)
-  Skillset.find_or_create_by_id(id: gwydion.id)
-  Skillset.find_or_create_by_id(id: bob.id)
-
-  Pal.create(user_id: elias.id, pal_id: gwydion.id)
-  Pal.create(user_id: gwydion.id, pal_id: elias.id)
+  Friend.create(user_id: elias.id, friend_id: gwydion.id)
+  Friend.create(user_id: gwydion.id, friend_id: elias.id)
 
   #Create some player nodes
   Node.create(player_id: 1, name: "A Clarinet", desc: "This is actually a woodwind instrument, not a computer.", programset_id: @ps_gwydion.id, system: 1, firewall: 1, response: 1, pilot: 0, signal: 400, gamesession_id: nil)  

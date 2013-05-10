@@ -1,5 +1,115 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>User:</b>
+  <%= User.find_by_id(@programset_template.user_id).username %>
+</p>
+
+<p>
+  <b>Analyze:</b>
+  <%= @programset_template.analyze %>
+</p>
+
+<p>
+  <b>Armor:</b>
+  <%= @programset_template.armor %>
+</p>
+
+<p>
+  <b>Attack:</b>
+  <%= @programset_template.attack %>
+</p>
+
+<p>
+  <b>Biofeedback filter:</b>
+  <%= @programset_template.biofeedback_filter %>
+</p>
+
+<p>
+  <b>Black hammer:</b>
+  <%= @programset_template.black_hammer %>
+</p>
+
+<p>
+  <b>Blackout:</b>
+  <%= @programset_template.blackout %>
+</p>
+
+<p>
+  <b>Command:</b>
+  <%= @programset_template.command %>
+</p>
+
+<p>
+  <b>Data bomb:</b>
+  <%= @programset_template.data_bomb %>
+</p>
+
+<p>
+  <b>Decrypt:</b>
+  <%= @programset_template.decrypt %>
+</p>
+
+<p>
+  <b>Defuse:</b>
+  <%= @programset_template.defuse %>
+</p>
+
+<p>
+  <b>Eccm:</b>
+  <%= @programset_template.eccm %>
+</p>
+
+<p>
+  <b>Edit:</b>
+  <%= @programset_template.edit %>
+</p>
+
+<p>
+  <b>Encrypt:</b>
+  <%= @programset_template.encrypt %>
+</p>
+
+<p>
+  <b>Exploit:</b>
+  <%= @programset_template.exploit %>
+</p>
+
+<p>
+  <b>Medic:</b>
+  <%= @programset_template.medic %>
+</p>
+
+<p>
+  <b>Reality filter:</b>
+  <%= @programset_template.reality_filter %>
+</p>
+
+<p>
+  <b>Scan:</b>
+  <%= @programset_template.scan %>
+</p>
+
+<p>
+  <b>Sniffer:</b>
+  <%= @programset_template.sniffer %>
+</p>
+
+<p>
+  <b>Spoof:</b>
+  <%= @programset_template.spoof %>
+</p>
+
+<p>
+  <b>Stealth:</b>
+  <%= @programset_template.stealth %>
+</p>
+
+<p>
+  <b>Track:</b>
+  <%= @programset_template.track %>
+</p>
+
 
 <%= link_to 'Edit', edit_programset_template_path(@programset_template) %> |
 <%= link_to 'Back', programset_templates_path %>
