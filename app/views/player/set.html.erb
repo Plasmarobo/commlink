@@ -1,7 +1,0 @@
-<div class="Title"> Select a player to continue</div>
-<% user = User.find_by_id session[:user_id]
-<div class="ListContainer">
-  <% user.player.each do |p| %>
-    <div class= "ListElement"> <%= link_to p.name, :back, onclick: "set_player('#{p.id}');"  %></div>
-  <% end %>
-</div>
