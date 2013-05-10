@@ -3,7 +3,7 @@ class Gamesession < ActiveRecord::Base
 
   attr_accessible :gm_id, :name
 
-  belongs_to :user, foreign_key: :gm_id
+  belongs_to :user
 
   has_many :groups
   has_many :players, through: :groups

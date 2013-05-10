@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-  attr_accessible :condition, :name, :skillset_id, :stun, :user_id
+  attr_accessible :condition, :name, :stun, :user_id
 
   belongs_to :user
 
@@ -9,8 +9,6 @@ class Player < ActiveRecord::Base
   has_many :visiblenodes
   has_many :gamesessions, through: :groups
   has_many :nodes
-
-  validates :skillset_id, presence: true
 
   def parsexml
     @skillset = Skillset.new

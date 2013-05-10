@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :password_digest, :username
 
-  has_many :gamesessions
+  has_many :gamesessions, foreign_key: :gm_id
   has_many :players
   has_many :friends
   has_many :nodes

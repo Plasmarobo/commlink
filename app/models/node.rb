@@ -2,11 +2,11 @@ class Node < ActiveRecord::Base
 
   attr_accessible :desc, :firewall, :gamesession_id, :name, :pilot, :player_id, :programset_id, :response, :signal, :system
 
-  belongs_to :player_id
+  belongs_to :player
   belongs_to :gamesession
 
-  has_one :programset_id
-  has_one :user, through: :gamesession, foreign_key: :gm_id
+  has_one :programset
+  # has_one :user, through: :gamesession, foreign_key: :gm_id #Note, not always true.
 
   has_many :visiblenodes
 

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509133224) do
+ActiveRecord::Schema.define(:version => 20130510184533) do
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "gamesessions", :force => true do |t|
     t.integer  "gm_id"
@@ -65,13 +72,6 @@ ActiveRecord::Schema.define(:version => 20130509133224) do
     t.integer  "gm_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-  end
-
-  create_table "pals", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "pal_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "players", :force => true do |t|
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20130509133224) do
     t.integer  "cybercombat",        :default => 0
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.integer  "player_id"
   end
 
   create_table "users", :force => true do |t|

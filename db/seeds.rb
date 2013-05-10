@@ -10,53 +10,41 @@
 @austen = User.find_or_create_by_email(username: 'austen', email: 'plasmarobo@gmail.com', password: 'dicksdicks', password_confirmation: 'dicksdicks')
 
 if Rails.env.development?
-
-  @ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
-  @sk_elias, @sk_gwydion, @sk_bob = Skillset.create(), Skillset.create(), Skillset.create()
-  
-
   elias = {
     user_id: 2,
     name: "Elias",
     condition: 6,
-    stun: 6,
-    skillset_id: 1
+    stun: 6
   }
   
   gwydion = {
     user_id: 1,
     name: "Gwydion",
     condition: 0,
-    stun: 0,
-    skillset_id: 2
+    stun: 0
   }
 
   bob = {
     user_id: 2,
     name: "Bob",
     condition: 1,
-    stun: 3,
-    skillset_id: 3
+    stun: 3
   }
-
   
   elias = Player.find_or_create_by_name(elias)
   gwydion = Player.find_or_create_by_name(gwydion)
   bob = Player.find_or_create_by_name(bob)
 
-  Friend.create(user_id: elias.id, friend_id: gwydion.id)
-  Friend.create(user_id: gwydion.id, friend_id: elias.id)
+  Friend.find_or_create_by_user_id(user_id: elias.id, friend_id: gwydion.id)
+  Friend.find_or_create_by_user_id(user_id: gwydion.id, friend_id: elias.id)
 
-  Skillset.find_or_create_by_id(id: elias.id, datasearch: 1)
-  Skillset.find_or_create_by_id(id: gwydion.id, datasearch: 10)
-  Skillset.find_or_create_by_id(id: bob.id, datasearch: 1)
-
-  Pal.create(user_id: elias.id, pal_id: gwydion.id)
-  Pal.create(user_id: gwydion.id, pal_id: elias.id)
+  elias.skillset = Skillset.find_or_create_by_id(id: elias.id, datasearch: 1)
+  gwydion.skillset = Skillset.find_or_create_by_id(id: gwydion.id, datasearch: 10)
+  bob.skillset = Skillset.find_or_create_by_id(id: bob.id, datasearch: 1)
 
   @ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
   #Create some player nodes
-  node_gwy = Node.create(player_id: gwydion.id, name: "A Clarinet", desc: "This is actually a woodwind instrument, not a computer.", programset_id: @ps_gwydion.id, system: 1, firewall: 1, response: 1, pilot: 0, signal: 400, gamesession_id: nil)  
+  node_gwy = Node.create(player_id: gwydion.id, name: "A Flute", desc: "This is actually a woodwind instrument, not a computer.", programset_id: @ps_gwydion.id, system: 1, firewall: 1, response: 1, pilot: 0, signal: 400, gamesession_id: nil)  
   node_els = Node.create(player_id: elias.id, name: "A Comm", desc: "Contains loads of gross Pr0n.", programset_id: @ps_elias.id, system: 3, firewall: 5, response: 4, pilot: 0, signal: 40, gamesession_id: nil)  
   node_bob = Node.create(player_id: bob.id, name: "Bob's Comm", desc: "He calls his mom with it.", programset_id: @ps_bob.id, system: 3, firewall: 5, response: 4, pilot: 0, signal: 40, gamesession_id: nil)  
   
