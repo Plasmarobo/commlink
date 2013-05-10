@@ -1,4 +1,4 @@
-<%= form_for(@skillset) do |f| %>
+
   <% if @skillset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@skillset.errors.count, "error") %> prohibited this skillset from being saved:</h2>
@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :computer %><br />
-    <%= f.number_field :computer %>
+    <div class="Label"> computer </div><br />
+    <%= number_field_tag :computer %>
   </div>
   <div class="field">
-    <%= f.label :cybercombat %><br />
-    <%= f.number_field :cybercombat %>
+    <div class="Label"> cybercombat </div><br />
+    <%= number_field_tag :cybercombat %>
   </div>
   <div class="field">
-    <%= f.label :datasearch %><br />
-    <%= f.number_field :datasearch %>
+    <div class="Label"> datasearch </div><br />
+    <%= number_field_tag :datasearch %>
   </div>
   <div class="field">
-    <%= f.label :electronic_warfare %><br />
-    <%= f.number_field :electronic_warfare %>
+    <div class="Label"> electronic_warfare </div><br />
+    <%= number_field_tag :electronic_warfare %>
   </div>
   <div class="field">
-    <%= f.label :hacking %><br />
-    <%= f.number_field :hacking %>
+    <div class="Label"> hacking </div><br />
+    <%= number_field_tag :hacking %>
   </div>
   <div class="field">
-    <%= f.label :hardware %><br />
-    <%= f.number_field :hardware %>
+    <div class="Label"> hardware </div><br />
+    <%= number_field_tag :hardware %>
   </div>
   <div class="field">
-    <%= f.label :software %><br />
-    <%= f.number_field :software %>
+    <div class="Label"> software </div><br />
+    <%= number_field_tag :software %>
   </div>
  
-<% end %>
+

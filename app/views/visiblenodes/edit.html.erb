@@ -1,6 +1,7 @@
 <div class="Title">Editing visiblenode</div>
-
+<%= form_tag url_for(controller: 'visiblenodes ', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @visiblenode %> |
 <%= link_to 'Back', visiblenodes_path %>

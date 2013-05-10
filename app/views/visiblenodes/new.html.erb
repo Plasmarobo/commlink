@@ -1,5 +1,7 @@
 <div class="Title">New visiblenode</div>
-
+<%= form_tag url: {controller: 'visiblenodes'} do %>
 <%= render 'form' %>
+<%= submit_tag :Submit %>
+<% end %>
 
 <%= link_to 'Back', visiblenodes_path %>

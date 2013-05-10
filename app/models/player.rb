@@ -37,11 +37,13 @@ class Player < ActiveRecord::Base
     self.name = params[:name]
     self.condition = params[:condition]
     self.stun = params[:stun]
+    self.user_id = params[:user_id]
   end
 
   def create_from(params)
-    self.update_from(params[:player])
-    skillset = Skillset.new params[:skillset]
+    self.update_from(params)
+    skillset = Skillset.new
+    skillset.create_from(params)
     if skillset.save
       self.skillset_id = skillset.id
     end

@@ -1,6 +1,7 @@
 <div class="Title">Editing programset_template</div>
-
+<%= form_tag url_for(controller: 'programset_templates', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @programset_template %> |
 <%= link_to 'Back', programset_templates_path %>

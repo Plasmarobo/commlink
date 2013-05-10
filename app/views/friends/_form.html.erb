@@ -1,4 +1,4 @@
-<%= form_for(@friend) do |f| %>
+
   <%= "<div class=\"#{flash[:color]}\">#{flash[:notice]}</div>" %>
   <% if @friend.errors.any? %>
     <div id="error_explanation">
@@ -14,9 +14,9 @@
 
   <div class="field">
     <%= f.label "Enter Username:" %><br />
-    <%= f.text_field :username %>
+    <%= text_field_tag :username %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag :Submit %>
   </div>
-<% end %>
+

@@ -1,5 +1,6 @@
 <div class="Title">New node</div>
-
+<%= form_tag url: {controller: 'nodes'} do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Back', nodes_path %>

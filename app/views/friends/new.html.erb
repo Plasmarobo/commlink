@@ -1,2 +1,5 @@
 <div class="Title">Add friend</div>
+<%= form_tag url: {controller: 'friends'} do %>
 <%= render 'form' %>
+<%= submit_tag :Submit %>
+<% end %>

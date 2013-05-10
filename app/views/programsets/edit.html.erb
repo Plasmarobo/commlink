@@ -1,6 +1,7 @@
 <div class="Title">Editing programset</div>
-
+<%= form_tag url_for(controller: 'programset', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @programset %> |
 <%= link_to 'Back', programsets_path %>

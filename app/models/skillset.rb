@@ -5,13 +5,20 @@ class Skillset < ActiveRecord::Base
   belongs_to :npc
 
   def update_from(params)
-      self.computer = params[:skill_computer]
-      self.cybercombat = params[:skill_cybercombat]
-      self.datasearch = params[:skill_datasearch]
-      self.electronic_warfare = params[:skill_electronic_warfare]
-      self.hacking = params[:skill_hacking]
-      self.hardware = params[:skill_hardware]
-      self.software = params[:skill_software]
+      #self.player_id = params[:player_id]
+      self.npc_id = params[:npc_id]
+      self.computer = params[:computer]
+      self.cybercombat = params[:cybercombat]
+      self.datasearch = params[:datasearch]
+      self.electronic_warfare = params[:electronic_warfare]
+      self.hacking = params[:hacking]
+      self.hardware = params[:hardware]
+      self.software = params[:software]
+  end
+
+  def create_from(params)
+    #Just alias for consitancy, we have no speical operations to perform here
+    self.update_from params
   end
 
   def item_names

@@ -1,4 +1,4 @@
-<%= form_for(@group) do |f| %>
+
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :gamesession_id %><br />
-    <%= f.number_field :gamesession_id %>
+    <div class="Label"> gamesession_id </div><br />
+    <%= number_field_tag :gamesession_id %>
   </div>
   <div class="field">
-    <%= f.label :player_id %><br />
-    <%= f.number_field :player_id %>
+    <div class="Label"> player_id </div><br />
+    <%= number_field_tag :player_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag :Submit %>
   </div>
-<% end %>
+

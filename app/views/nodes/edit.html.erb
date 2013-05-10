@@ -1,6 +1,7 @@
 <div class="Title">Editing node</div>
-
+<%= form_tag url_for(controller: 'nodes', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @node %> |
 <%= link_to 'Back', nodes_path %>

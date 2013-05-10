@@ -1,4 +1,4 @@
-<%= form_for(@programset) do |f| %>
+
   <% if @programset.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@programset.errors.count, "error") %> prohibited this programset from being saved:</h2>
@@ -12,90 +12,90 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :analyze %><br />
-    <%= f.number_field :analyze %>
+    <div class="Label"> analyze </div><br />
+    <%= number_field_tag :analyze %>
   </div>
   <div class="field">
-    <%= f.label :armor %><br />
-    <%= f.number_field :armor %>
+    <div class="Label"> armor </div><br />
+    <%= number_field_tag :armor %>
   </div>
   <div class="field">
-    <%= f.label :attack %><br />
-    <%= f.number_field :attack %>
+    <div class="Label"> attack </div><br />
+    <%= number_field_tag :attack %>
   </div>
   <div class="field">
-    <%= f.label :biofeedback_filter %><br />
-    <%= f.number_field :biofeedback_filter %>
+    <div class="Label"> biofeedback_filter </div><br />
+    <%= number_field_tag :biofeedback_filter %>
   </div>
   <div class="field">
-    <%= f.label :black_hammer %><br />
-    <%= f.number_field :black_hammer %>
+    <div class="Label"> black_hammer </div><br />
+    <%= number_field_tag :black_hammer %>
   </div>
   <div class="field">
-    <%= f.label :blackout %><br />
-    <%= f.number_field :blackout %>
+    <div class="Label"> blackout </div><br />
+    <%= number_field_tag :blackout %>
   </div>
   <div class="field">
-    <%= f.label :command %><br />
-    <%= f.number_field :command %>
+    <div class="Label"> command </div><br />
+    <%= number_field_tag :command %>
   </div>
   <div class="field">
-    <%= f.label :data_bomb %><br />
-    <%= f.number_field :data_bomb %>
+    <div class="Label"> data_bomb </div><br />
+    <%= number_field_tag :data_bomb %>
   </div>
   <div class="field">
-    <%= f.label :decrypt %><br />
-    <%= f.number_field :decrypt %>
+    <div class="Label"> decrypt </div><br />
+    <%= number_field_tag :decrypt %>
   </div>
   <div class="field">
-    <%= f.label :defuse %><br />
-    <%= f.number_field :defuse %>
+    <div class="Label"> defuse </div><br />
+    <%= number_field_tag :defuse %>
   </div>
   <div class="field">
-    <%= f.label :eccm %><br />
-    <%= f.number_field :eccm %>
+    <div class="Label"> eccm </div><br />
+    <%= number_field_tag :eccm %>
   </div>
   <div class="field">
-    <%= f.label :edit %><br />
-    <%= f.number_field :edit %>
+    <div class="Label"> edit </div><br />
+    <%= number_field_tag :edit %>
   </div>
   <div class="field">
-    <%= f.label :encrypt %><br />
-    <%= f.number_field :encrypt %>
+    <div class="Label"> encrypt </div><br />
+    <%= number_field_tag :encrypt %>
   </div>
   <div class="field">
-    <%= f.label :exploit %><br />
-    <%= f.number_field :exploit %>
+    <div class="Label"> exploit </div><br />
+    <%= number_field_tag :exploit %>
   </div>
   <div class="field">
-    <%= f.label :medic %><br />
-    <%= f.number_field :medic %>
+    <div class="Label"> medic </div><br />
+    <%= number_field_tag :medic %>
   </div>
   <div class="field">
-    <%= f.label :reality_filter %><br />
-    <%= f.number_field :reality_filter %>
+    <div class="Label"> reality_filter </div><br />
+    <%= number_field_tag :reality_filter %>
   </div>
   <div class="field">
-    <%= f.label :scan %><br />
-    <%= f.number_field :scan %>
+    <div class="Label"> scan </div><br />
+    <%= number_field_tag :scan %>
   </div>
   <div class="field">
-    <%= f.label :sniffer %><br />
-    <%= f.number_field :sniffer %>
+    <div class="Label"> sniffer </div><br />
+    <%= number_field_tag :sniffer %>
   </div>
   <div class="field">
-    <%= f.label :spoof %><br />
-    <%= f.number_field :spoof %>
+    <div class="Label"> spoof </div><br />
+    <%= number_field_tag :spoof %>
   </div>
   <div class="field">
-    <%= f.label :stealth %><br />
-    <%= f.number_field :stealth %>
+    <div class="Label"> stealth </div><br />
+    <%= number_field_tag :stealth %>
   </div>
   <div class="field">
-    <%= f.label :track %><br />
-    <%= f.number_field :track %>
+    <div class="Label"> track </div><br />
+    <%= number_field_tag :track %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag :Submit %>
   </div>
-<% end %>
+

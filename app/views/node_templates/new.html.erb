@@ -1,5 +1,6 @@
 <div class="Title">New node_template</div>
-
+<%= form_tag url: {controller: 'node_templates'} do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Back', node_templates_path %>

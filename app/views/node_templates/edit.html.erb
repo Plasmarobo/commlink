@@ -1,6 +1,8 @@
 <div class="Title">Editing node_template</div>
-
+<%= form_tag url_for(controller: 'node_templates', action: 'update') do %>
 <%= render 'form' %>
+<%= submit_tag :Submit %>
+<% end %>
 
 <%= link_to 'Show', @node_template %> |
 <%= link_to 'Back', node_templates_path %>

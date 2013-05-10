@@ -1,5 +1,6 @@
 <div class="Title">New group</div>
-
+<%= form_tag url: {controller: 'groups'} do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Back', groups_path %>

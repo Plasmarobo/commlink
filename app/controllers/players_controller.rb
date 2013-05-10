@@ -61,10 +61,8 @@ class PlayersController < ApplicationController
     if params[:file]
       uploaded_xml = File.new(params[:file])
       @player.parsexml(uploaded_xml)
-    elsif params[:player] and params[:skillset]
-      @player.create_from(params)
     else
-      @player.create(params)
+      @player.create_from(params)
     end
     
     respond_to do |format|

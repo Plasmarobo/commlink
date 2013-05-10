@@ -1,6 +1,7 @@
 <div class="Title">Editing player</div>
-
+<%= form_tag url_for(controller: 'players', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @player %> |
 <%= link_to 'Back', players_path %>

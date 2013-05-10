@@ -1,5 +1,6 @@
 <div class="Title">New user</div>
-
+<%= form_tag {controller: 'users'} do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Back', users_path %>

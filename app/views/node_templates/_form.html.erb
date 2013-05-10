@@ -1,4 +1,4 @@
-<%= form_for(@node_template) do |f| %>
+
   <% if @node_template.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@node_template.errors.count, "error") %> prohibited this node_template from being saved:</h2>
@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="Label"> name </div><br />
+    <%= text_field_tag :name %>
   </div>
   <div class="field">
-    <%= f.label :desc %><br />
+    <div class="Label"> desc </div><br />
     <%= f.text_area :desc %>
   </div>
   <div class="FormContainer">
@@ -24,28 +24,28 @@
     <%= render :template => "programset/edit", :@programset => @programset %>
   </div>
   <div class="field">
-    <%= f.label :system %><br />
-    <%= f.number_field :system %>
+    <div class="Label"> system </div><br />
+    <%= number_field_tag :system %>
   </div>
   <div class="field">
-    <%= f.label :firewall %><br />
-    <%= f.number_field :firewall %>
+    <div class="Label"> firewall </div><br />
+    <%= number_field_tag :firewall %>
   </div>
   <div class="field">
-    <%= f.label :pilot %><br />
-    <%= f.number_field :pilot %>
+    <div class="Label"> pilot </div><br />
+    <%= number_field_tag :pilot %>
   </div>
   <div class="field">
-    <%= f.label :signal %><br />
-    <%= f.number_field :signal %>
+    <div class="Label"> signal </div><br />
+    <%= number_field_tag :signal %>
   </div>
   <div class="field">
-    <%= f.label :response %><br />
-    <%= f.number_field :response %>
+    <div class="Label"> response </div><br />
+    <%= number_field_tag :response %>
   </div>
   <%= render 'progremsettemplate/index' %>
   <%= render 'programset/form' %>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag :Submit %>
   </div>
-<% end %>
+

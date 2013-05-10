@@ -1,4 +1,4 @@
-<%= form_for(@player) do |f| %>
+
   <% if @player.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="Label">Name: </div><br />
+    <%= text_field_tag :name, @player ? @player.name : nil %>
   </div>
   <div class="field">
-    <%= f.label :condition %><br />
-    <%= f.number_field :condition %>
+    <div class="Label"> Condition:</div><br />
+    <%= number_field_tag :condition, @player ? @player.condition : nil %>
   </div>
   <div class="field">
-    <%= f.label :stun %><br />
-    <%= f.number_field :stun %>
+    <div class="Lable">Stun: </div><br />
+    <%= number_field_tag :stun, @player ? @player.stun : nil %>
   </div>
-<% end %>
-<%= render partial: 'skillsets/form', locals: {:@skillset => @skillset } %>
+
+<%= render partial: 'skillsets/form', locals: {:@skillset => @skillset ? @skillset : Skillset.new } %>
 

@@ -1,6 +1,7 @@
-<h1>Editing gamesession</h1>
-
+<div class="Title">Editing gamesession</div>
+<%= form_tag url_for(controller: 'gamesessions', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @gamesession %> |
 <%= link_to 'Back', gamesessions_path %>

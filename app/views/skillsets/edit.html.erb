@@ -1,6 +1,7 @@
 <div class="Title">Editing skillset</div>
-
+<%= form_tag url_for(controller: 'skillsets', action: 'update') do %>
 <%= render 'form' %>
-<%= submit_tag :Submit %>
+<%= submit_tag :Submit %><%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @skillset %> |
 <%= link_to 'Back', skillsets_path %>

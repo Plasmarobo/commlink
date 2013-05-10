@@ -1,6 +1,8 @@
-<h1>Editing group</h1>
-
+<div class="Title">Editing group</div>
+<%= form_tag url_for(controller: 'groups', action: 'update') do %>
 <%= render 'form' %>
+<%= submit_tag :Submit %>
+<% end %>
 
 <%= link_to 'Show', @group %> |
 <%= link_to 'Back', groups_path %>

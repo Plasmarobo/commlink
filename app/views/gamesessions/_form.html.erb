@@ -1,6 +1,5 @@
 <div class="FormContainer">
   <%= javascript_tag "$(document).ready(function() {supress_edit(); supress_delete();});" %>
-<%= form_for(@gamesession) do |f| %>
   <% if @gamesession.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@gamesession.errors.count, "error") %> prohibited this gamesession from being saved:</h2>
@@ -14,12 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :gm_id %><br />
-    <%= f.number_field :gm_id %>
+    <div class="Label"> gm_id </div><br />
+    <%= number_field_tag :gm_id %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="Label"> name </div><br />
+    <%= text_field_tag :name %>
   </div>
   <%= render template: {layout: :switch}, locals: {left: {list: 'node/index' , id: 'nodesrc'}, right: {list: nil, id: 'nodelist'}  } %>
   <%= render template: {layout: :switch}, locals: {left: {list: 'nodetemplates/index' , id: 'nodetemplatesrc'}, right: {list: nil, id: 'notedemplatelist'}  } %>
@@ -28,7 +27,6 @@
   <%= hidden_field_tag :playerlist_data %>
   <%= hidden_field_tag :nodetemplate_data %>
   <div class="actions">
-    <%= f.submit onclick: "parse_sel_submit('#gamesession', '.ListElement', {'#nodelist' : '#nodelist_data', '#playerlist' : '#playerlist_data', '#nodetemplate_data' : '#nodetemplatelist'});" %>
+    <%= submit_tag :Submit onclick: "parse_sel_submit('#gamesession', '.ListElement', {'#nodelist' : '#nodelist_data', '#playerlist' : '#playerlist_data', '#nodetemplate_data' : '#nodetemplatelist'});" %>
   </div>
-<% end %>
 </div>

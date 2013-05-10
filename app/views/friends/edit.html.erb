@@ -1,6 +1,7 @@
 <div class="Title">Editing friend</div>
-
+<%= form_tag url_for(controller: 'friends', action: 'update') do %>
 <%= render 'form' %>
-
+<%= submit_tag :Submit %>
+<% end %>
 <%= link_to 'Show', @friend %> |
 <%= link_to 'Back', friends_path %>
