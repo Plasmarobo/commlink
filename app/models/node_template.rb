@@ -1,7 +1,11 @@
 class NodeTemplate < ActiveRecord::Base
+  attr_accessible :desc, :firewall, :name, :pilot, :programset_id, :response, :signal, :system, :user_id
+
   belongs_to :user
-  has_one :programset, dependent: :destroy
-  attr_accessible :desc, :firewall, :name, :pilot, :programset_id, :response, :signal, :signal, :system, :user_id
+
+  has_one :programset
+
+
   def instance_node
     node = Node.new
     node.desc = self.desc
@@ -16,4 +20,5 @@ class NodeTemplate < ActiveRecord::Base
     node.system = self.system
     return node
   end
+
 end

@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base
-	belongs_to :gamesession
-	belongs_to :player
-  attr_accessible :id, :gamesession_id, :player_id
+  attr_accessible :gamesession_id, :player_id
+
+  belongs_to :player_id
+  belongs_to :gamesession
 end

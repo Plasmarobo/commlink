@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @player.user_id %>
+</p>
+
+<p>
+  <b>Condition:</b>
+  <%= @player.condition %>
+</p>
+
+<p>
+  <b>Stun:</b>
+  <%= @player.stun %>
+</p>
+
+<p>
+  <b>Skillset:</b>
+  <%= link_to "Edit", edit_skillset_path(@player.skillset_id) %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>

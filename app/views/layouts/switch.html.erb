@@ -1,0 +1,17 @@
+<div class="SwitchList">
+  <div class="LeftList" id="<%= left.id%>">
+    <%= render left.list %>
+  </div>
+  <div class="CenterList">
+    <%= button_tag ">>", :type => :button, :onclick => "move_sel('##{left.id}', 'ListSel','##{right.id}');", :class => "SwitchButton" %>
+    <%= button_tag "<<", :type => :button, :onclick => "move_sel('##{right.id}', 'ListSel', '#{left.id}');", :class => "SwitchButton" %>
+    <% if new_en %>
+    <%= button_tag :new, :controller => :node, :action => :new, :class => "SwitchButton" %>
+    <% end %>
+  </div>
+  <div class="RightList" id="<%= right.id %>">
+    <% if right.list %>
+      <%= render right.list %>
+    <% end %>
+  </div>
+</div>

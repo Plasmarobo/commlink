@@ -1,0 +1,29 @@
+<%= form_for(@npc) do |f| %>
+  <% if @npc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@npc.errors.count, "error") %> prohibited this npc from being saved:</h2>
+
+      <ul>
+      <% @npc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :secret %><br />
+    <%= f.text_field :secret %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<div class="Title">Listing skillsets</div>
+
+<table>
+  <tr>
+    <th>Computer</th>
+    <th>Cybercombat</th>
+    <th>Datasearch</th>
+    <th>Electronic warfare</th>
+    <th>Hacking</th>
+    <th>Hardware</th>
+    <th>Npc</th>
+    <th>Player</th>
+    <th>Software</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skillsets.each do |skillset| %>
+  <tr>
+    <td><%= skillset.computer %></td>
+    <td><%= skillset.cybercombat %></td>
+    <td><%= skillset.datasearch %></td>
+    <td><%= skillset.electronic_warfare %></td>
+    <td><%= skillset.hacking %></td>
+    <td><%= skillset.hardware %></td>
+    <td><%= skillset.npc ? link_to skillset.npc.name, show_npc_path(skillset.npc_id) : "none" %></td>
+    <td><%= skillset.player ? link_to skillset.player.name, show_player_path(skillset.player_id) : "none" %></td>
+    <td><%= skillset.software %></td>
+    <td><%= link_to 'Show', skillset %></td>
+    <td><%= link_to 'Edit', edit_skillset_path(skillset) %></td>
+    <td><%= link_to 'Destroy', skillset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Skillset', new_skillset_path %>

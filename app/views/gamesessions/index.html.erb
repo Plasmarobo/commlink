@@ -1,0 +1,26 @@
+<div class="Title">Playing</div>
+
+<div class="ListContainer">
+  <% @user.players.each do |p| %>
+  <div class="ListElement">
+    <b><%= p.name %></b>
+  </div>
+  <% p.gamesessions.each do |g| %>
+    <div class= "ListElement">
+      <%= link_to g.name, {:controller => :gamesession, :action => :play, :game_id => g.id, :player_id => p.id} %>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+
+<div class="Title">Running</div>
+<div class="ListContainer">
+  <% @user.gamesessions.each do |g| %>
+  <div class= "ListElement"> 
+    <%= link_to g.name, :action => :manage, :id => g.id %>
+    <%= link_to image_tag("delete16.png", :border => 0), {:controller => :gamesession, :action => :delete, :id => g.id}, :class => "DeleteTag" %> 
+  </div>
+</div>
+<br />
+
+<%= button_to 'New', new_gamesession_path %>

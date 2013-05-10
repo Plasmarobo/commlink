@@ -1,0 +1,15 @@
+<div class="Title">Listing friends</div>
+
+<div class="ListContainer">
+
+<% @user.friends.each do |friend| %>
+  <% user = User.find_by_id friend.friend_id %>
+  <div class="ListElement">
+    <% img = image_tag("delete16.png", :border => 0) %>
+    <% link = (link_to img, {:controller => :friends, :action => :destroy, :id => friend.id, :username => user.username}, :class => "DeleteTag") %>
+    <%= content_tag(:div, ("#{user.username} " + link).html_safe, :onclick => "select_list_item(this, \'#{user.username}\', 'ListSel', '#pal_data')", :class => "ListElement InSelector") %>
+  </div>
+<% end %>
+</div>
+<br />
+<%= render 'new' %>

@@ -1,8 +1,0 @@
-<div class="FormContainer">
-	<% @programset.item_names.each do |c, d| %>
-		<div class="EditCell"><div class="EditCellLabel"> <%= d %> </div>
-			<%= text_field_tag ("prog_" + c.to_s), @programset.send(c), :class => "EditCellInput" %>
-		</div>
-	<% end %>
-	<br class="Clear" />
-</div>

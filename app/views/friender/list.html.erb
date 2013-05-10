@@ -1,9 +1,0 @@
-<div class= "ListContainer" id="pals">
-	<% @user.pals.each do |p| %>
-	  <% username = User.find_by_id(p.pal_id).username %>
-    <% img = image_tag("delete16.png", :border => 0) %>
-    <% link = (link_to img, {:controller => :friender, :action => :remove, :id => p.id, :username => username}, :class => "DeleteTag") %>
-	  <%= content_tag(:div, ("#{username} " + link).html_safe, :onclick => "select_list_item(this, \'#{username}\', 'ListSel', '#pal_data')", :class => "ListElement InSelector") %>
-  <% end %>
-</div>
-  <%= hidden_field_tag :pal_data %>

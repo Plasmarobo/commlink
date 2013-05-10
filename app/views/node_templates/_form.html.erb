@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -36,10 +32,6 @@
     <%= f.number_field :firewall %>
   </div>
   <div class="field">
-    <%= f.label :response %><br />
-    <%= f.number_field :response %>
-  </div>
-  <div class="field">
     <%= f.label :pilot %><br />
     <%= f.number_field :pilot %>
   </div>
@@ -48,9 +40,11 @@
     <%= f.number_field :signal %>
   </div>
   <div class="field">
-    <%= f.label :signal %><br />
-    <%= f.number_field :signal %>
+    <%= f.label :response %><br />
+    <%= f.number_field :response %>
   </div>
+  <%= render 'progremsettemplate/index' %>
+  <%= render 'programset/form' %>
   <div class="actions">
     <%= f.submit %>
   </div>

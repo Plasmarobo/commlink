@@ -1,17 +1,15 @@
-<h1>Listing node_templates</h1>
+<div class="Title">Listing node_templates</div>
 
 <table>
   <tr>
-    <th>User</th>
     <th>Name</th>
-    <th>Desc</th>
-    <th>Programset</th>
-    <th>System</th>
     <th>Firewall</th>
-    <th>Response</th>
+    <th>System</th>
     <th>Pilot</th>
     <th>Signal</th>
-    <th>Signal</th>
+    <th>Response</th>
+    <th>Programset</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,16 +17,14 @@
 
 <% @node_templates.each do |node_template| %>
   <tr>
-    <td><%= node_template.user_id %></td>
     <td><%= node_template.name %></td>
-    <td><%= node_template.desc %></td>
-    <td><%= node_template.programset_id %></td>
-    <td><%= node_template.system %></td>
     <td><%= node_template.firewall %></td>
-    <td><%= node_template.response %></td>
+    <td><%= node_template.system %></td>
     <td><%= node_template.pilot %></td>
     <td><%= node_template.signal %></td>
-    <td><%= node_template.signal %></td>
+    <td><%= node_template.response %></td>
+    <td><%= link_to edit_programset_path(node_template.programset_id) %></td>
+    <td><%= User.find_by_id(node_template.user_id).username %></td>
     <td><%= link_to 'Show', node_template %></td>
     <td><%= link_to 'Edit', edit_node_template_path(node_template) %></td>
     <td><%= link_to 'Destroy', node_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>

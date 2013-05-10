@@ -1,7 +1,9 @@
 class Skillset < ActiveRecord::Base
+  attr_accessible :computer, :cybercombat, :datasearch, :electronic_warfare, :hacking, :hardware, :npc_id, :player_id, :software
+
   belongs_to :player
-  attr_accessible :id, :computer, :cybercombat, :datasearch, :electronic_warfare, :hacking, :hardware, :npc_id, :player_id, :software
-  
+  belongs_to :npc
+
   def update_from(params)
       self.computer = params[:skill_computer]
       self.cybercombat = params[:skill_cybercombat]
@@ -13,15 +15,16 @@ class Skillset < ActiveRecord::Base
   end
 
   def item_names
-  	return {
-  		computer: "Computer", 
-  		cybercombat: "Cybercombat", 
-  		datasearch: "Datasearch", 
-  		electronic_warfare: "Electronic Warfare", 
-  		hacking: "Hacking", 
-  		hardware: "Hardware",  
-  		software: "Software"
-  	}
+    return {
+      computer: "Computer", 
+      cybercombat: "Cybercombat", 
+      datasearch: "Datasearch", 
+      electronic_warfare: "Electronic Warfare", 
+      hacking: "Hacking", 
+      hardware: "Hardware",  
+      software: "Software"
+    }
   end
+
 
 end

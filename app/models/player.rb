@@ -1,32 +1,36 @@
 class Player < ActiveRecord::Base
-	belongs_to :user
-  has_many :nodes, dependent: :destroy
-	has_many :groups
-  has_many :visiblenodes, dependent: :destroy
-	has_many :gamesessions, through: :groups
-	has_one :skillset, dependent: :destroy, foreign_key: :id
+  attr_accessible :condition, :name, :skillset_id, :stun, :user_id
 
-  attr_accessible :id, :user_id, :name, :condition, :stun, :skillset_id
-    
-	def parsexml
-  	@skillset = Skillset.new
-  	@programset = Programset.new
-  	@commlink = Node.new
+  belongs_to :user
 
-  	doc = Nokogiri::XML(uploaded_xml)
+  has_one :skillset
+
+  has_many :groups
+  has_many :visiblenodes
+  has_many :gamesessions, through: :groups
+  has_many :nodes
+
+  validates :skillset_id, presence: true
+
+  def parsexml
+    @skillset = Skillset.new
+    @programset = Programset.new
+    @commlink = Node.new
+
+    doc = Nokogiri::XML(uploaded_xml)
 
     #Parse Doc using Nokogiri! http://nokogiri.org
 
-  	@commlink.player_id = @player.id
-  	@commlink.programset_id = @programset.id
-  	@commlink.save
-  	@skillset.save 
-  	@programset.player_id = @player.id
-  	@programset.save
-	  @player.skillset_id = @skillset.id
+    @commlink.player_id = @player.id
+    @commlink.programset_id = @programset.id
+    @commlink.save
+    @skillset.save 
+    @programset.player_id = @player.id
+    @programset.save
+    @player.skillset_id = @skillset.id
     @player.user_id = session[:user_id]
-  	@player.save
-  	return true
+    @player.save
+    return true
   end
 
   def update_from(params)
@@ -34,4 +38,13 @@ class Player < ActiveRecord::Base
     self.condition = params[:condition]
     self.stun = params[:stun]
   end
+
+  def create_from(params)
+    self.update_from(params[:player])
+    skillset = Skillset.new params[:skillset]
+    if skillset.save
+      self.skillset_id = skillset.id
+    end
+  end
+
 end

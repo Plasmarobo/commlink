@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @npc.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @npc.desc %>
+</p>
+
+<p>
+  <b>Node:</b>
+  <%= link_to "Edit", edit_node_path(@npc.node_id) %>
+</p>
+
+<p>
+  <b>Secret:</b>
+  <%= @npc.secret %>
+</p>
+
+
+<%= link_to 'Edit', edit_npc_path(@npc) %> |
+<%= link_to 'Back', npcs_path %>

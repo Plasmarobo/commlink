@@ -1,0 +1,3 @@
+
+<%= render layout: 'select', locals: {collection: @user.players, list_name: 'players', name_property: 'name', target_id: 'player_data'} %>
+<%= submit_tag :Start, :onclick => "$.cookie('player_id', $('#players').find('.ListSel').attr('value'))"%>

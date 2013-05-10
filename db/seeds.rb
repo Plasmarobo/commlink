@@ -11,29 +11,41 @@
 
 if Rails.env.development?
 
+  @ps_elias, @ps_gwydion, @ps_bob = Programset.create(), Programset.create(), Programset.create()
+  @sk_elias, @sk_gwydion, @sk_bob = Skillset.create(), Skillset.create(), Skillset.create()
+  
+
   elias = {
     user_id: 2,
     name: "Elias",
     condition: 6,
-    stun: 6
+    stun: 6,
+    skillset_id: 1
   }
-
+  
   gwydion = {
     user_id: 1,
     name: "Gwydion",
     condition: 0,
-    stun: 0
+    stun: 0,
+    skillset_id: 2
   }
 
   bob = {
     user_id: 2,
     name: "Bob",
     condition: 1,
-    stun: 3
+    stun: 3,
+    skillset_id: 3
   }
+
+  
   elias = Player.find_or_create_by_name(elias)
   gwydion = Player.find_or_create_by_name(gwydion)
   bob = Player.find_or_create_by_name(bob)
+
+  Friend.create(user_id: elias.id, friend_id: gwydion.id)
+  Friend.create(user_id: gwydion.id, friend_id: elias.id)
 
   Skillset.find_or_create_by_id(id: elias.id, datasearch: 1)
   Skillset.find_or_create_by_id(id: gwydion.id, datasearch: 10)

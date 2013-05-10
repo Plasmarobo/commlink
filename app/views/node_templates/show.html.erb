@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @node_template.user_id %>
-</p>
-
-<p>
   <b>Name:</b>
   <%= @node_template.name %>
 </p>
@@ -16,23 +11,13 @@
 </p>
 
 <p>
-  <b>Programset:</b>
-  <%= @node_template.programset_id %>
-</p>
-
-<p>
-  <b>System:</b>
-  <%= @node_template.system %>
-</p>
-
-<p>
   <b>Firewall:</b>
   <%= @node_template.firewall %>
 </p>
 
 <p>
-  <b>Response:</b>
-  <%= @node_template.response %>
+  <b>System:</b>
+  <%= @node_template.system %>
 </p>
 
 <p>
@@ -46,8 +31,18 @@
 </p>
 
 <p>
-  <b>Signal:</b>
-  <%= @node_template.signal %>
+  <b>Response:</b>
+  <%= @node_template.response %>
+</p>
+
+<p>
+  <b>Programset:</b>
+  <%= link_to "Edit", edit_programset_path(@node_template.programset_id) %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= User.find_by_id(@node_template.user_id).username %>
 </p>
 
 

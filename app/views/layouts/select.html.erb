@@ -1,0 +1,6 @@
+<div class="ListContainer" id="<%= list_name %>">
+  <% collection.each do |item| %>
+    <%= content_tag(:div, item.send(name_property), onclick: "select_list_item(this, #{item.id}, 'ListSel', '##{target_id}')", :class => "ListElement InSelector") %>
+  <% end %>
+</div>
+<%= hidden_field_tag(target_id, value: nil) %>

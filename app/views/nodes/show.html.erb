@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @node.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @node.desc %>
+</p>
+
+<p>
+  <b>Firewall:</b>
+  <%= @node.firewall %>
+</p>
+
+<p>
+  <b>System:</b>
+  <%= @node.system %>
+</p>
+
+<p>
+  <b>Pilot:</b>
+  <%= @node.pilot %>
+</p>
+
+<p>
+  <b>Signal:</b>
+  <%= @node.signal %>
+</p>
+
+<p>
+  <b>Response:</b>
+  <%= @node.response %>
+</p>
+
+<p>
+  <b>Programset:</b>
+  <%= link_to "Edit", edit_programset_path @node.programset_id %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= Player.find_by_id(@node.player_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

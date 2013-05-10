@@ -1,154 +1,57 @@
 Commlink::Application.routes.draw do
 
+  get "players/upload"
+
+  get "sessions/home"
+
+  get "sessions/login"
+
+  post "sessions/login_attempt"
+
+  get "sessions/logout"
+
+  post "sessions/logout"
+
+  get "sessions/profile"
+
+  get "sessions/settings"
+
+  resources :skillsets
+
+
+  resources :programsets
+
+
+  resources :players
+
+
+  resources :friends
+
+
+  resources :npcs
+
+
+  resources :nodes
+
+
+  resources :groups
+
+
+  resources :gamesessions
+
+
+  resources :users
+
+
   resources :programset_templates
 
 
   resources :visiblenodes
 
 
-  post "friender/create"
-
-  get "friender/add"
-
-  get "friender/list"
-
-  get "friender/remove"
-
-  get "friender/delete_attempt"
-
-  post "friender/delete_attempt"
-
-  get "rules/new"
-
-  get "rules/upload"
-
-  get "rules/download"
-
-  get "rules/move"
-
-  get "chummer/new"
-
-  get "chummer/edit"
-
-  get "chummer/finish"
-
-  get "chummer/update"
-
-  get "chummer/view"
-
   resources :node_templates
 
-  get "skillset/new"
-
-  get "skillset/edit"
-
-  get "skillset/delete"
-
-  get "programset/new"
-
-  get "programset/edit"
-
-  get "programset/delete"
-
-  get "programset/list"
-
-  post "programset/list"
-
-  get "node/new"
-
-  post "node/new"
-
-  get "node/create"
-
-  post "node/create"
-
-  get "node/list"
-
-  get "node/edit"
-
-  post "node/edit"
-
-  get "node/manage"
-
-  get "node/delete"
-
-  post "node/edit_attempt"
-
-  get "node/edit_attempt"
-
-  get "groups/new"
-
-  get "groups/list"
-
-  get "gamesession/new"
-
-  post "gamesession/new"
-
-  get "gamesession/list"
-
-  get "gamesession/gm"
-
-  get "gamesession/player"
-
-  get "groups/create"
-
-  get "groups/edit"
-
-  get "groups/delete"
-
-  get "gamesession/create"
-
-  post "gamesession/create"
-
-  get "gamesession/edit"
-
-  get "gamesession/delete"
-
-  get "gamesession/manage"
-
-  get "gamesession/advance"
-
-  get "player/new"
-
-  post "player/new"
-
-  post "player/parsexml"
-
-  get "player/edit"
-
-  get "player/select"
-
-  post "player/select"
-
-  get "player/list"
-
-  get "player/delete"
-
-  get "player/edit_attempt"
-
-  post "player/edit_attempt"
-
-  get "sessions/login"
-
-  post "session/login_attempt"
-
-  get "sessions/home"
-
-  get "sessions/profile"
-
-  get "sessions/setting"
-
-  get "login/home"
-
-  get "login/profile"
-
-  get "users/new"
-
-  get "users/create"
-
-  post "users/new"
-
-  post "users/create"
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -209,14 +112,4 @@ Commlink::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   root :to => "sessions#home"
-  match "signup", :to => "users#new"
-  match "login", :to => "sessions#login"
-  match "logout", :to => "sessions#logout"
-  match "home", :to => "sessions#home"
-  match "profile", :to => "sessions#profile"
-  match "setting", :to => "sessions#setting"
-  match "login_attempt", :to => "sessions#login_attempt"
-  match "register", :to => "users#new"
-  match "player", :to => "player#list"
-  match "upload", :to => "player#new"
 end
