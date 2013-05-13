@@ -13,31 +13,31 @@
 
   <div class="field">
     <div class="Label"> computer </div><br />
-    <%= number_field_tag :computer %>
+    <%= number_field_tag :computer, @skillset ? @skillset.computer : 0 %>
   </div>
   <div class="field">
     <div class="Label"> cybercombat </div><br />
-    <%= number_field_tag :cybercombat %>
+    <%= number_field_tag :cybercombat, @skillset ? @skillset.cybercombat : 0 %>
   </div>
   <div class="field">
     <div class="Label"> datasearch </div><br />
-    <%= number_field_tag :datasearch %>
+    <%= number_field_tag :datasearch, @skillset ? @skillset.datasearch : 0 %>
   </div>
   <div class="field">
     <div class="Label"> electronic_warfare </div><br />
-    <%= number_field_tag :electronic_warfare %>
+    <%= number_field_tag :electronic_warfare, @skillset ? @skillset.electronic_warfare : 0 %>
   </div>
   <div class="field">
     <div class="Label"> hacking </div><br />
-    <%= number_field_tag :hacking %>
+    <%= number_field_tag :hacking, @skillset ? @skillset.hacking : 0 %>
   </div>
   <div class="field">
     <div class="Label"> hardware </div><br />
-    <%= number_field_tag :hardware %>
+    <%= number_field_tag :hardware, @skillset ? @skillset.hardware : 0 %>
   </div>
   <div class="field">
     <div class="Label"> software </div><br />
-    <%= number_field_tag :software %>
+    <%= number_field_tag :software, @skillset ? @skillset.software : 0 %>
   </div>
  
 

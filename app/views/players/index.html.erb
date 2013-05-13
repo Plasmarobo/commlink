@@ -17,6 +17,7 @@
     <td><%= player.user_id %></td>
     <td><%= player.condition %></td>
     <td><%= player.stun %></td>
+    <td><%= link_to 'Nodes', controller: :nodes, action: :index, player: player.id %>
     <td><%= link_to 'Show', player %></td>
     <td><%= link_to 'Edit', edit_player_path(player) %></td>
     <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,3 +28,4 @@
 <br />
 
 <%= link_to 'New Player', new_player_path %>
+<%= link_to 'Upload Player', controller: :players, action: :upload %>

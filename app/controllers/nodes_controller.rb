@@ -14,7 +14,11 @@ class NodesController < ApplicationController
   # GET /nodes/1
   # GET /nodes/1.json
   def show
-    @node = Node.find(params[:id])
+    if params[:player]
+      @node = Nodes.find_by_player params[:player]
+    else
+      @node = Node.find(params[:id])
+    end 
 
     respond_to do |format|
       format.html # show.html.erb

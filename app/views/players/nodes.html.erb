@@ -1,0 +1,5 @@
+<div class="Title"><%= player.name + "'s Nodes" %></div>
+
+<%= player.nodes.each do |n| %>
+  <%= render {controller: :nodes, action: :list}, locals: {node: => n} %>
+<% end %>

@@ -13,38 +13,35 @@
 
   <div class="field">
     <div class="Label"> name </div><br />
-    <%= text_field_tag :name %>
+    <%= text_field_tag :name, @node_template ? @node_template.name : "" %>
   </div>
   <div class="field">
     <div class="Label"> desc </div><br />
-    <%= f.text_area :desc %>
+    <%= text_area_tag :desc, @node_template ? @node_template.desc : "" %>
   </div>
   <div class="FormContainer">
-    <% @programset = Programset.find_by_id @node_template.programset_id %>
-    <%= render :template => "programset/edit", :@programset => @programset %>
+    <%= render :template => {controller: :programsets, action: :edit, locals: {:@programset => @node_template.programset} %>
   </div>
   <div class="field">
     <div class="Label"> system </div><br />
-    <%= number_field_tag :system %>
+    <%= number_field_tag :system, @node_template ? @node_template.system : 0  %>
   </div>
   <div class="field">
     <div class="Label"> firewall </div><br />
-    <%= number_field_tag :firewall %>
+    <%= number_field_tag :firewall, @node_template ? @node_template.firewall : 0 %>
   </div>
   <div class="field">
     <div class="Label"> pilot </div><br />
-    <%= number_field_tag :pilot %>
+    <%= number_field_tag :pilot, @node_template ? @node_template.pilot : 0 %>
   </div>
   <div class="field">
     <div class="Label"> signal </div><br />
-    <%= number_field_tag :signal %>
+    <%= number_field_tag :signal, @node_template ? @node_template.signal : 0 %>
   </div>
   <div class="field">
     <div class="Label"> response </div><br />
-    <%= number_field_tag :response %>
+    <%= number_field_tag :response, @node_template ? @node_template.response : 0 %>
   </div>
-  <%= render 'progremsettemplate/index' %>
-  <%= render 'programset/form' %>
   <div class="actions">
     <%= submit_tag :Submit %>
   </div>

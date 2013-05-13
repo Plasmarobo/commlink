@@ -41,7 +41,7 @@ class PlayersController < ApplicationController
   # GET /players/1/edit
   def edit
     @player = Player.find(params[:id])
-    @skillset = Player.skillset
+    @skillset = @player.skillset
   end
 
   def upload
